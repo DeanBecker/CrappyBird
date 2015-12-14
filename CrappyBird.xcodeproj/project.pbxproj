@@ -1,0 +1,278 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		EB8D161A1C1F18CF00B02657 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EB8D16191C1F18CF00B02657 /* main.cpp */; };
+		EB8D16211C1F18F900B02657 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB8D16201C1F18F900B02657 /* OpenGL.framework */; };
+		EB8D16231C1F190700B02657 /* libglfw3.3.1.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = EB8D16221C1F190700B02657 /* libglfw3.3.1.dylib */; };
+		EB8D16251C1F191500B02657 /* libGLEW.1.13.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = EB8D16241C1F191500B02657 /* libGLEW.1.13.0.dylib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		EB8D16141C1F18CF00B02657 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		EB8D16161C1F18CF00B02657 /* CrappyBird */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = CrappyBird; sourceTree = BUILT_PRODUCTS_DIR; };
+		EB8D16191C1F18CF00B02657 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = main.cpp; path = src/main.cpp; sourceTree = "<group>"; };
+		EB8D16201C1F18F900B02657 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
+		EB8D16221C1F190700B02657 /* libglfw3.3.1.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libglfw3.3.1.dylib; path = /usr/local/Cellar/glfw3/3.1.2/lib/libglfw3.3.1.dylib; sourceTree = "<absolute>"; };
+		EB8D16241C1F191500B02657 /* libGLEW.1.13.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libGLEW.1.13.0.dylib; path = /usr/local/Cellar/glew/1.13.0/lib/libGLEW.1.13.0.dylib; sourceTree = "<absolute>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		EB8D16131C1F18CF00B02657 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EB8D16251C1F191500B02657 /* libGLEW.1.13.0.dylib in Frameworks */,
+				EB8D16231C1F190700B02657 /* libglfw3.3.1.dylib in Frameworks */,
+				EB8D16211C1F18F900B02657 /* OpenGL.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		EB8D160D1C1F18CF00B02657 = {
+			isa = PBXGroup;
+			children = (
+				EB8D16261C1F1BB400B02657 /* Frameworks */,
+				EB8D16181C1F18CF00B02657 /* CrappyBird */,
+				EB8D16171C1F18CF00B02657 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		EB8D16171C1F18CF00B02657 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				EB8D16161C1F18CF00B02657 /* CrappyBird */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		EB8D16181C1F18CF00B02657 /* CrappyBird */ = {
+			isa = PBXGroup;
+			children = (
+				EB8D16191C1F18CF00B02657 /* main.cpp */,
+			);
+			path = CrappyBird;
+			sourceTree = "<group>";
+		};
+		EB8D16261C1F1BB400B02657 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EB8D16241C1F191500B02657 /* libGLEW.1.13.0.dylib */,
+				EB8D16221C1F190700B02657 /* libglfw3.3.1.dylib */,
+				EB8D16201C1F18F900B02657 /* OpenGL.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		EB8D16151C1F18CF00B02657 /* CrappyBird */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EB8D161D1C1F18CF00B02657 /* Build configuration list for PBXNativeTarget "CrappyBird" */;
+			buildPhases = (
+				EB8D16121C1F18CF00B02657 /* Sources */,
+				EB8D16131C1F18CF00B02657 /* Frameworks */,
+				EB8D16141C1F18CF00B02657 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CrappyBird;
+			productName = CrappyBird;
+			productReference = EB8D16161C1F18CF00B02657 /* CrappyBird */;
+			productType = "com.apple.product-type.tool";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		EB8D160E1C1F18CF00B02657 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0720;
+				ORGANIZATIONNAME = "Dean Becker";
+				TargetAttributes = {
+					EB8D16151C1F18CF00B02657 = {
+						CreatedOnToolsVersion = 7.2;
+					};
+				};
+			};
+			buildConfigurationList = EB8D16111C1F18CF00B02657 /* Build configuration list for PBXProject "CrappyBird" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = EB8D160D1C1F18CF00B02657;
+			productRefGroup = EB8D16171C1F18CF00B02657 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				EB8D16151C1F18CF00B02657 /* CrappyBird */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		EB8D16121C1F18CF00B02657 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EB8D161A1C1F18CF00B02657 /* main.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		EB8D161B1C1F18CF00B02657 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		EB8D161C1C1F18CF00B02657 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		EB8D161E1C1F18CF00B02657 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
+				HEADER_SEARCH_PATHS = "/usr/local/include/**";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					/usr/local/Cellar/glfw3/3.1.2/lib,
+					/usr/local/Cellar/glew/1.13.0/lib,
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		EB8D161F1C1F18CF00B02657 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
+				HEADER_SEARCH_PATHS = "/usr/local/include/**";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					/usr/local/Cellar/glfw3/3.1.2/lib,
+					/usr/local/Cellar/glew/1.13.0/lib,
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		EB8D16111C1F18CF00B02657 /* Build configuration list for PBXProject "CrappyBird" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EB8D161B1C1F18CF00B02657 /* Debug */,
+				EB8D161C1C1F18CF00B02657 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EB8D161D1C1F18CF00B02657 /* Build configuration list for PBXNativeTarget "CrappyBird" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EB8D161E1C1F18CF00B02657 /* Debug */,
+				EB8D161F1C1F18CF00B02657 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = EB8D160E1C1F18CF00B02657 /* Project object */;
+}
