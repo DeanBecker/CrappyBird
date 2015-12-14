@@ -1,4 +1,4 @@
-////
+//
 ////  main.cpp
 ////  CrappyBird
 ////
@@ -26,6 +26,30 @@ static void error_callback(int error, const char* description)
     std::cout << description << std::endl;
 }
 
+void init()
+{
+    if (!glfwInit()) {
+        std::cout << "GLFW could not initialise!" << std::endl;
+        exit(EXIT_FAILURE);
+    }
+
+    glfwSetErrorCallback(error_callback);
+
+    window = glfwCreateWindow(width, height, "Crappy Bird", NULL, NULL);
+    if (!window)
+    {
+        glfwTerminate();
+        std::cout << "GLFW could not create a window!" << std::endl;
+        exit(EXIT_FAILURE);
+    }
+
+    glfwSwapInterval(1);
+    glfwSetKeyCallback(window, key_callback);
+    glfwMakeContextCurrent(window);
+
+
+}
+
 void update()
 {
 
@@ -33,39 +57,34 @@ void update()
 
 void render()
 {
-
-}
-
-
-void init()
-{
-    if (!glfwInit()) {
-        std::cout << "GLFW could not initialise!";
-        return;
-    }
-
-    glfwSetErrorCallback(error_callback);
-
-    window = glfwCreateWindow(width, height, "Crappy Bird", NULL, NULL);
-
-    if (!window) {
-        glfwTerminate();
-        std::cout << "GLFW could not create a window!";
-        return;
-    }
-
-    glfwSwapInterval(1);
-    glfwSetKeyCallback(window, key_callback);
-
-    glfwMakeContextCurrent(window);
-    glfwShowWindow(window);
+    glClear(GL_COLOR_BUFFER_BIT);
+    glClearColor(1.0f, 0.0f, 1.0f, 1.0f);
 }
 
 void run()
 {
     init();
 
+    double lastTime = glfwGetTime();
+    int frames = 0;
+
     while (running) {
+        double now = glfwGetTime();
+        frames++;
+        if (now - lastTime >= 1.0) {
+            printf("%f ms/frame\n", 1000.0/double(frames));
+            frames = 0;
+            lastTime += 1.0;
+        }
+
+        update();
+        render();
+
+        int error = glGetError();
+        if (error != GL_NO_ERROR) {
+            std::cout << error << std::endl;
+        }
+
         if (glfwWindowShouldClose(window)) {
             running = false;
         }

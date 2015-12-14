@@ -22,3 +22,8 @@ void key_callback(GLFWwindow* window,
 
     keys[key] = action != GLFW_RELEASE;
 }
+
+bool isKeyDown(int key)
+{
+    return keys[key];
+}

@@ -18,4 +18,6 @@ void key_callback(GLFWwindow* window,
                          int action,
                          int mods);
 
+bool isKeyDown(int key);
+
 #endif /* Input_hpp */
