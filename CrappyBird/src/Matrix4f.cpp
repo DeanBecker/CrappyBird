@@ -58,9 +58,9 @@ Matrix4f Matrix4f::translate(Vector3f* vec)
 Matrix4f Matrix4f::rotate(float angle)
 {
     Matrix4f result = identity();
-    float r = angle * PI / 180;
-    float cosA = cos(angle);
-    float sinA = sin(angle);
+    float r = angle * PI / 180.0f;
+    float cosA = (float)cos(r);
+    float sinA = (float)sin(r);
 
     result.data[0 + 0 * 4] = cosA;
     result.data[1 + 0 * 4] = sinA;
@@ -77,6 +77,6 @@ Matrix4f Matrix4f::multiply(Matrix4f *otherMat)
     Matrix4f result;
 
     // TODO
-    
+
     return result;
 }
