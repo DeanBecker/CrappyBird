@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EB3A5ACE1C1F58A8006F4AF6 /* Shader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EB3A5ACC1C1F58A8006F4AF6 /* Shader.cpp */; };
+		EB3A5AD21C1F61F2006F4AF6 /* Vector3f.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EB3A5AD01C1F61F2006F4AF6 /* Vector3f.cpp */; };
+		EB3A5AD51C1F632F006F4AF6 /* Matrix4f.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EB3A5AD31C1F632F006F4AF6 /* Matrix4f.cpp */; };
 		EB44BAAE1C1F2E3C0029AF4C /* Input.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EB44BAAC1C1F2E3C0029AF4C /* Input.cpp */; };
 		EB8D161A1C1F18CF00B02657 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EB8D16191C1F18CF00B02657 /* main.cpp */; };
 		EB8D16211C1F18F900B02657 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB8D16201C1F18F900B02657 /* OpenGL.framework */; };
@@ -27,6 +30,12 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		EB3A5ACC1C1F58A8006F4AF6 /* Shader.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Shader.cpp; sourceTree = "<group>"; };
+		EB3A5ACD1C1F58A8006F4AF6 /* Shader.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Shader.hpp; sourceTree = "<group>"; };
+		EB3A5AD01C1F61F2006F4AF6 /* Vector3f.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Vector3f.cpp; sourceTree = "<group>"; };
+		EB3A5AD11C1F61F2006F4AF6 /* Vector3f.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Vector3f.hpp; sourceTree = "<group>"; };
+		EB3A5AD31C1F632F006F4AF6 /* Matrix4f.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Matrix4f.cpp; sourceTree = "<group>"; };
+		EB3A5AD41C1F632F006F4AF6 /* Matrix4f.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Matrix4f.hpp; sourceTree = "<group>"; };
 		EB44BAAC1C1F2E3C0029AF4C /* Input.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Input.cpp; sourceTree = "<group>"; };
 		EB44BAAD1C1F2E3C0029AF4C /* Input.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Input.hpp; sourceTree = "<group>"; };
 		EB8D16161C1F18CF00B02657 /* CrappyBird */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = CrappyBird; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -50,6 +59,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		EB3A5ACB1C1F588F006F4AF6 /* Graphics */ = {
+			isa = PBXGroup;
+			children = (
+				EB3A5ACC1C1F58A8006F4AF6 /* Shader.cpp */,
+				EB3A5ACD1C1F58A8006F4AF6 /* Shader.hpp */,
+			);
+			name = Graphics;
+			sourceTree = "<group>";
+		};
+		EB3A5ACF1C1F61E0006F4AF6 /* Maths */ = {
+			isa = PBXGroup;
+			children = (
+				EB3A5AD01C1F61F2006F4AF6 /* Vector3f.cpp */,
+				EB3A5AD11C1F61F2006F4AF6 /* Vector3f.hpp */,
+				EB3A5AD31C1F632F006F4AF6 /* Matrix4f.cpp */,
+				EB3A5AD41C1F632F006F4AF6 /* Matrix4f.hpp */,
+			);
+			name = Maths;
+			sourceTree = "<group>";
+		};
 		EB44BAA81C1F2B880029AF4C /* Input */ = {
 			isa = PBXGroup;
 			children = (
@@ -98,6 +127,8 @@
 		EB8D16271C1F25AC00B02657 /* src */ = {
 			isa = PBXGroup;
 			children = (
+				EB3A5ACF1C1F61E0006F4AF6 /* Maths */,
+				EB3A5ACB1C1F588F006F4AF6 /* Graphics */,
 				EB44BAA81C1F2B880029AF4C /* Input */,
 				EB8D16191C1F18CF00B02657 /* main.cpp */,
 			);
@@ -168,6 +199,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				EB44BAAE1C1F2E3C0029AF4C /* Input.cpp in Sources */,
+				EB3A5AD21C1F61F2006F4AF6 /* Vector3f.cpp in Sources */,
+				EB3A5AD51C1F632F006F4AF6 /* Matrix4f.cpp in Sources */,
+				EB3A5ACE1C1F58A8006F4AF6 /* Shader.cpp in Sources */,
 				EB8D161A1C1F18CF00B02657 /* main.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

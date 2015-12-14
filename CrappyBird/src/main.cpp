@@ -46,19 +46,18 @@ void init()
     glfwSwapInterval(1);
     glfwSetKeyCallback(window, key_callback);
     glfwMakeContextCurrent(window);
-
-
 }
 
 void update()
 {
-
+    glfwPollEvents();
 }
 
 void render()
 {
     glClear(GL_COLOR_BUFFER_BIT);
     glClearColor(1.0f, 0.0f, 1.0f, 1.0f);
+    glfwSwapBuffers(window);
 }
 
 void run()
@@ -88,9 +87,6 @@ void run()
         if (glfwWindowShouldClose(window)) {
             running = false;
         }
-
-        glfwSwapBuffers(window);
-        glfwPollEvents();
     }
 }
 
