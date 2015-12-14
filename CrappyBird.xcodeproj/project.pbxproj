@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EB44BAAE1C1F2E3C0029AF4C /* Input.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EB44BAAC1C1F2E3C0029AF4C /* Input.cpp */; };
 		EB8D161A1C1F18CF00B02657 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EB8D16191C1F18CF00B02657 /* main.cpp */; };
 		EB8D16211C1F18F900B02657 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB8D16201C1F18F900B02657 /* OpenGL.framework */; };
 		EB8D16231C1F190700B02657 /* libglfw3.3.1.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = EB8D16221C1F190700B02657 /* libglfw3.3.1.dylib */; };
@@ -26,8 +27,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		EB44BAAC1C1F2E3C0029AF4C /* Input.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Input.cpp; sourceTree = "<group>"; };
+		EB44BAAD1C1F2E3C0029AF4C /* Input.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Input.hpp; sourceTree = "<group>"; };
 		EB8D16161C1F18CF00B02657 /* CrappyBird */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = CrappyBird; sourceTree = BUILT_PRODUCTS_DIR; };
-		EB8D16191C1F18CF00B02657 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = main.cpp; path = src/main.cpp; sourceTree = "<group>"; };
+		EB8D16191C1F18CF00B02657 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		EB8D16201C1F18F900B02657 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
 		EB8D16221C1F190700B02657 /* libglfw3.3.1.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libglfw3.3.1.dylib; path = /usr/local/Cellar/glfw3/3.1.2/lib/libglfw3.3.1.dylib; sourceTree = "<absolute>"; };
 		EB8D16241C1F191500B02657 /* libGLEW.1.13.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libGLEW.1.13.0.dylib; path = /usr/local/Cellar/glew/1.13.0/lib/libGLEW.1.13.0.dylib; sourceTree = "<absolute>"; };
@@ -47,6 +50,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		EB44BAA81C1F2B880029AF4C /* Input */ = {
+			isa = PBXGroup;
+			children = (
+				EB44BAAC1C1F2E3C0029AF4C /* Input.cpp */,
+				EB44BAAD1C1F2E3C0029AF4C /* Input.hpp */,
+			);
+			name = Input;
+			sourceTree = "<group>";
+		};
 		EB8D160D1C1F18CF00B02657 = {
 			isa = PBXGroup;
 			children = (
@@ -67,7 +79,8 @@
 		EB8D16181C1F18CF00B02657 /* CrappyBird */ = {
 			isa = PBXGroup;
 			children = (
-				EB8D16191C1F18CF00B02657 /* main.cpp */,
+				EB8D16281C1F25B700B02657 /* res */,
+				EB8D16271C1F25AC00B02657 /* src */,
 			);
 			path = CrappyBird;
 			sourceTree = "<group>";
@@ -80,6 +93,22 @@
 				EB8D16201C1F18F900B02657 /* OpenGL.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		EB8D16271C1F25AC00B02657 /* src */ = {
+			isa = PBXGroup;
+			children = (
+				EB44BAA81C1F2B880029AF4C /* Input */,
+				EB8D16191C1F18CF00B02657 /* main.cpp */,
+			);
+			path = src;
+			sourceTree = "<group>";
+		};
+		EB8D16281C1F25B700B02657 /* res */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = res;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,6 +167,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EB44BAAE1C1F2E3C0029AF4C /* Input.cpp in Sources */,
 				EB8D161A1C1F18CF00B02657 /* main.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -271,6 +301,7 @@
 				EB8D161F1C1F18CF00B02657 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
