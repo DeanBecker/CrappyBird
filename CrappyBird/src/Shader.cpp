@@ -12,11 +12,10 @@ extern "C" {
     #include "ShaderUtils.h"
 }
 
-static int VERTEX_ATTRIB = 0;
-static int TCOORD_ATTRIB = 1;
-
 std::unordered_map<std::string, GLint> uniformCache;
 bool enabled;
+
+Shader* Shader::BG_Shader;
 
 Shader::Shader(std::string vert, std::string frag)
 {
@@ -25,7 +24,7 @@ Shader::Shader(std::string vert, std::string frag)
 
 void Shader::LoadAll()
 {
-    // When we've got something to actually load....
+    BG_Shader = new Shader("shaders/bg.vert", "shaders/bg.frag");
 }
 
 int Shader::getUniform(std::string name)

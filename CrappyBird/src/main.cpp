@@ -7,9 +7,11 @@
 ////
 //
 //#include <GL/glew.h>
-#include <GLFW/glfw3.h>
+
+#include "gl_headers.h"
 
 #include "Input.hpp"
+#include "Shader.hpp"
 
 #include <iostream>
 
@@ -35,6 +37,11 @@ void init()
 
     glfwSetErrorCallback(error_callback);
 
+    glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
+    glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 2);
+    glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
+    glfwWindowHint(GLFW_OPENGL_FORWARD_COMPAT, GL_TRUE);
+
     window = glfwCreateWindow(width, height, "Crappy Bird", NULL, NULL);
     if (!window)
     {
@@ -46,6 +53,10 @@ void init()
     glfwSwapInterval(1);
     glfwSetKeyCallback(window, key_callback);
     glfwMakeContextCurrent(window);
+
+    printf("Supported GLSL version is %s.\n", (char *)glGetString(GL_SHADING_LANGUAGE_VERSION));
+
+    Shader::LoadAll();
 }
 
 void update()

@@ -19,12 +19,25 @@ char* getFileContents(const char * fileName)
         inputSize = ftell(f);
         rewind(f);
 
-        contents = malloc(inputSize * sizeof(char));
+        contents = (char *)malloc(inputSize+1 * sizeof(char));
         fread(contents, sizeof(char), inputSize, f);
         fclose(f);
+
+        contents[inputSize] = '\0';
     }
 
     return contents;
+}
+
+void logGLSLCompilationError(GLint shaderId)
+{
+    GLint errorLen = 0;
+    glGetShaderiv(shaderId, GL_INFO_LOG_LENGTH, &errorLen);
+
+    char errorBuffer[errorLen];
+    glGetShaderInfoLog(shaderId, errorLen, &errorLen, errorBuffer);
+
+    printf("%s", errorBuffer);
 }
 
 int compileProgram(const char * vertexFile, const char * fragmentFile)
@@ -41,8 +54,7 @@ int compileProgram(const char * vertexFile, const char * fragmentFile)
     glGetShaderiv(vertId, GL_COMPILE_STATUS, &isCompiled);
     if (isCompiled == GL_FALSE) {
         printf("Failed to compile vertex shader: \n");
-        glDeleteShader(vertId);
-        return -1;
+        logGLSLCompilationError(vertId);
     }
 
     int fragId = glCreateShader(GL_FRAGMENT_SHADER);
@@ -51,9 +63,8 @@ int compileProgram(const char * vertexFile, const char * fragmentFile)
     glCompileShader(fragId);
     glGetShaderiv(fragId, GL_COMPILE_STATUS, &isCompiled);
     if (isCompiled == GL_FALSE) {
-        printf("Failed to compile vertex shader: \n");
-        glDeleteShader(fragId);
-        return -1;
+        printf("Failed to compile fragment shader: \n");
+        logGLSLCompilationError(fragId);
     }
 
     glAttachShader(program, vertId);
@@ -69,3 +80,4 @@ int compileProgram(const char * vertexFile, const char * fragmentFile)
 
     return program;
 }
+

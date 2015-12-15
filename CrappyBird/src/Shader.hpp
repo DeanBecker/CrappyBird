@@ -11,7 +11,9 @@
 
 #include <stdio.h>
 #include <string>
-#include <GLFW/glfw3.h>
+
+#include "gl_headers.h"
+
 #include <unordered_map>
 
 #include "Vector3f.hpp"
@@ -23,6 +25,12 @@ class Shader
 {
 public:
     int programId;
+
+    // Static Shader Instances
+    static Shader* BG_Shader;
+
+    static const int VERTEX_ATTRIB = 0;
+    static const int TCOORD_ATTRIB = 1;
 
     Shader(std::string vert, std::string frag);
 

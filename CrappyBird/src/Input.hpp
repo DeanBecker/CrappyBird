@@ -9,7 +9,8 @@
 #ifndef Input_hpp
 #define Input_hpp
 
-#include <GLFW/glfw3.h>
+#include "gl_headers.h"
+
 #include <stdio.h>
 
 void key_callback(GLFWwindow* window,

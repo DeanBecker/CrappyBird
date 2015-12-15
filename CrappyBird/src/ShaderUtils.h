@@ -11,7 +11,8 @@
 
 #include <stdio.h>
 #include <stdlib.h>
-#include <GLFW/glfw3.h>
+
+#include "gl_headers.h"
 
 int compileProgram(const char * vertexFile, const char * fragmentFile);
 
