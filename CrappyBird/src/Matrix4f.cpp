@@ -76,7 +76,15 @@ Matrix4f Matrix4f::multiply(Matrix4f *otherMat)
 {
     Matrix4f result;
 
-    // TODO
+    for (int y = 0; y < 4; y++) {
+        for (int x = 0; x < 4; x++) {
+            float sum = 0.0f;
+            for (int e = 0; e < 4; e++) {
+                sum += this->data[x + e * 4] * otherMat->data[e + y * 4];
+            }
+            result.data[x + y * 4] = sum;
+        }
+    }
 
     return result;
 }
