@@ -28,6 +28,7 @@ public:
     static Matrix4f rotate(float angle);
 
     Matrix4f multiply(Matrix4f *otherMat);
+    float* toBuffer();
 
 private:
     float data[];

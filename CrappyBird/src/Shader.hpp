@@ -19,11 +19,12 @@
 
 
 
-
 class Shader
 {
 public:
     int programId;
+
+    Shader(std::string vert, std::string frag);
 
     static void LoadAll();
 
@@ -37,6 +38,8 @@ public:
 
     void enable();
     void disable();
+
+    ~Shader();
 };
 
 #endif /* Shader_hpp */

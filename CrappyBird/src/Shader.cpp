@@ -8,7 +8,20 @@
 
 #include "Shader.hpp"
 
+extern "C" {
+    #include "ShaderUtils.h"
+}
+
+static int VERTEX_ATTRIB = 0;
+static int TCOORD_ATTRIB = 1;
+
 std::unordered_map<std::string, GLint> uniformCache;
+bool enabled;
+
+Shader::Shader(std::string vert, std::string frag)
+{
+	programId = compileProgram(vert.c_str(), frag.c_str());
+}
 
 void Shader::LoadAll()
 {
@@ -52,10 +65,27 @@ void Shader::setUniform3f(std::string name, float x, float y, float z)
 
 void Shader::setUniform3f(std::string name, Vector3f vec)
 {
-
+	setUniform3f(name, vec.x, vec.y, vec.z);
 }
 
 void Shader::setUniformMat4f(std::string name, Matrix4f mat)
 {
-    
+    glUniformMatrix4fv(getUniform(name), sizeof(float) * 16, GL_FALSE, (const GLfloat *)mat.toBuffer());
+}
+
+void Shader::enable()
+{
+    glUseProgram(programId);
+    enabled = true;
+}
+
+void Shader::disable()
+{
+    glUseProgram(0);
+    enabled = false;
+}
+
+Shader::~Shader()
+{
+    glDeleteProgram(programId);
 }

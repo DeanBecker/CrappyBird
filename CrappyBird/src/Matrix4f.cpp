@@ -88,3 +88,8 @@ Matrix4f Matrix4f::multiply(Matrix4f *otherMat)
 
     return result;
 }
+
+float* Matrix4f::toBuffer()
+{
+    return data;
+}
