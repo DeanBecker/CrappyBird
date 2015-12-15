@@ -15,6 +15,7 @@
 		EB8D16211C1F18F900B02657 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB8D16201C1F18F900B02657 /* OpenGL.framework */; };
 		EB8D16231C1F190700B02657 /* libglfw3.3.1.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = EB8D16221C1F190700B02657 /* libglfw3.3.1.dylib */; };
 		EB8D16251C1F191500B02657 /* libGLEW.1.13.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = EB8D16241C1F191500B02657 /* libGLEW.1.13.0.dylib */; };
+		EBEFC7BE1C2037D00019DC1F /* ShaderUtils.c in Sources */ = {isa = PBXBuildFile; fileRef = EBEFC7BC1C2037D00019DC1F /* ShaderUtils.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -43,6 +44,8 @@
 		EB8D16201C1F18F900B02657 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
 		EB8D16221C1F190700B02657 /* libglfw3.3.1.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libglfw3.3.1.dylib; path = /usr/local/Cellar/glfw3/3.1.2/lib/libglfw3.3.1.dylib; sourceTree = "<absolute>"; };
 		EB8D16241C1F191500B02657 /* libGLEW.1.13.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libGLEW.1.13.0.dylib; path = /usr/local/Cellar/glew/1.13.0/lib/libGLEW.1.13.0.dylib; sourceTree = "<absolute>"; };
+		EBEFC7BC1C2037D00019DC1F /* ShaderUtils.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ShaderUtils.c; sourceTree = "<group>"; };
+		EBEFC7BD1C2037D00019DC1F /* ShaderUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShaderUtils.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,6 +130,7 @@
 		EB8D16271C1F25AC00B02657 /* src */ = {
 			isa = PBXGroup;
 			children = (
+				EBEFC7B91C2036C50019DC1F /* Utils */,
 				EB3A5ACF1C1F61E0006F4AF6 /* Maths */,
 				EB3A5ACB1C1F588F006F4AF6 /* Graphics */,
 				EB44BAA81C1F2B880029AF4C /* Input */,
@@ -140,6 +144,15 @@
 			children = (
 			);
 			path = res;
+			sourceTree = "<group>";
+		};
+		EBEFC7B91C2036C50019DC1F /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				EBEFC7BC1C2037D00019DC1F /* ShaderUtils.c */,
+				EBEFC7BD1C2037D00019DC1F /* ShaderUtils.h */,
+			);
+			name = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -198,6 +211,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EBEFC7BE1C2037D00019DC1F /* ShaderUtils.c in Sources */,
 				EB44BAAE1C1F2E3C0029AF4C /* Input.cpp in Sources */,
 				EB3A5AD21C1F61F2006F4AF6 /* Vector3f.cpp in Sources */,
 				EB3A5AD51C1F632F006F4AF6 /* Matrix4f.cpp in Sources */,
