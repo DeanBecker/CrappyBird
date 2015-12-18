@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EB101E481C218F62001886B1 /* Level.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EB101E461C218F62001886B1 /* Level.cpp */; };
 		EB3A5ACE1C1F58A8006F4AF6 /* Shader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EB3A5ACC1C1F58A8006F4AF6 /* Shader.cpp */; };
 		EB3A5AD21C1F61F2006F4AF6 /* Vector3f.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EB3A5AD01C1F61F2006F4AF6 /* Vector3f.cpp */; };
 		EB3A5AD51C1F632F006F4AF6 /* Matrix4f.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EB3A5AD31C1F632F006F4AF6 /* Matrix4f.cpp */; };
@@ -34,6 +35,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		EB101E461C218F62001886B1 /* Level.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Level.cpp; sourceTree = "<group>"; };
+		EB101E471C218F62001886B1 /* Level.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Level.hpp; sourceTree = "<group>"; };
+		EB101E491C218F90001886B1 /* res */ = {isa = PBXFileReference; lastKnownFileType = folder; path = res; sourceTree = "<group>"; };
 		EB3A5ACC1C1F58A8006F4AF6 /* Shader.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Shader.cpp; sourceTree = "<group>"; };
 		EB3A5ACD1C1F58A8006F4AF6 /* Shader.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Shader.hpp; sourceTree = "<group>"; };
 		EB3A5AD01C1F61F2006F4AF6 /* Vector3f.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Vector3f.cpp; sourceTree = "<group>"; };
@@ -69,6 +73,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		EB101E451C218F4D001886B1 /* Game */ = {
+			isa = PBXGroup;
+			children = (
+				EB101E461C218F62001886B1 /* Level.cpp */,
+				EB101E471C218F62001886B1 /* Level.hpp */,
+			);
+			name = Game;
+			sourceTree = "<group>";
+		};
 		EB3A5ACB1C1F588F006F4AF6 /* Graphics */ = {
 			isa = PBXGroup;
 			children = (
@@ -121,8 +134,8 @@
 		EB8D16181C1F18CF00B02657 /* CrappyBird */ = {
 			isa = PBXGroup;
 			children = (
+				EB101E491C218F90001886B1 /* res */,
 				EBEFC7BF1C2056540019DC1F /* shaders */,
-				EB8D16281C1F25B700B02657 /* res */,
 				EB8D16271C1F25AC00B02657 /* src */,
 			);
 			path = CrappyBird;
@@ -141,6 +154,7 @@
 		EB8D16271C1F25AC00B02657 /* src */ = {
 			isa = PBXGroup;
 			children = (
+				EB101E451C218F4D001886B1 /* Game */,
 				EBEFC7B91C2036C50019DC1F /* Utils */,
 				EB3A5ACF1C1F61E0006F4AF6 /* Maths */,
 				EB3A5ACB1C1F588F006F4AF6 /* Graphics */,
@@ -148,13 +162,6 @@
 				EB8D16191C1F18CF00B02657 /* main.cpp */,
 			);
 			path = src;
-			sourceTree = "<group>";
-		};
-		EB8D16281C1F25B700B02657 /* res */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = res;
 			sourceTree = "<group>";
 		};
 		EBEFC7B91C2036C50019DC1F /* Utils */ = {
@@ -224,6 +231,7 @@
 			files = (
 				EBEFC7BE1C2037D00019DC1F /* ShaderUtils.c in Sources */,
 				EB44BAAE1C1F2E3C0029AF4C /* Input.cpp in Sources */,
+				EB101E481C218F62001886B1 /* Level.cpp in Sources */,
 				EBEFC7C31C206A240019DC1F /* VertexArray.cpp in Sources */,
 				EB3A5AD21C1F61F2006F4AF6 /* Vector3f.cpp in Sources */,
 				EB3A5AD51C1F632F006F4AF6 /* Matrix4f.cpp in Sources */,

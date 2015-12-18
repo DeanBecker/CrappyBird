@@ -36,13 +36,14 @@ public:
 
     static void LoadAll();
 
+    int getAttrib(std::string name);
     int getUniform(std::string name);
     void setUniform1i(std::string name, int value);
     void setUniform1f(std::string name, float value);
     void setUniform2f(std::string name, float x, float y);
     void setUniform3f(std::string name, float x, float y, float z);
-    void setUniform3f(std::string name, Vector3f vec);
-    void setUniformMat4f(std::string name, Matrix4f mat);
+    void setUniform3f(std::string name, Vector3f* vec);
+    void setUniformMat4f(std::string name, Matrix4f* mat);
 
     void enable();
     void disable();

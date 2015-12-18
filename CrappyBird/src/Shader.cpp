@@ -27,6 +27,12 @@ void Shader::LoadAll()
     BG_Shader = new Shader("shaders/bg.vert", "shaders/bg.frag");
 }
 
+int Shader::getAttrib(std::string name)
+{
+    GLuint attribLoc = glGetAttribLocation(programId, name.c_str());
+    return attribLoc;
+}
+
 int Shader::getUniform(std::string name)
 {
     std::unordered_map<std::string, GLint>::const_iterator lookup = uniformCache.find(name.c_str());
@@ -36,7 +42,7 @@ int Shader::getUniform(std::string name)
         return lookup->second;
     }
 
-    GLint uniformLocation = glGetUniformLocation(programId, name.c_str());
+    GLint uniformLocation = glGetUniformLocation(programId, (const GLchar *)name.c_str());
     uniformCache.insert( { name, uniformLocation} );
 
     return uniformLocation;
@@ -44,32 +50,44 @@ int Shader::getUniform(std::string name)
 
 void Shader::setUniform1i(std::string name, int value)
 {
+    if (!enabled)
+        enable();
     glUniform1i(getUniform(name), value);
 }
 
 void Shader::setUniform1f(std::string name, float value)
 {
+    if (!enabled)
+        enable();
     glUniform1f(getUniform(name), value);
 }
 
 void Shader::setUniform2f(std::string name, float x, float y)
 {
+    if (!enabled)
+        enable();
     glUniform2f(getUniform(name), x, y);
 }
 
 void Shader::setUniform3f(std::string name, float x, float y, float z)
 {
+    if (!enabled)
+        enable();
     glUniform3f(getUniform(name), x, y, z);
 }
 
-void Shader::setUniform3f(std::string name, Vector3f vec)
+void Shader::setUniform3f(std::string name, Vector3f* vec)
 {
-	setUniform3f(name, vec.x, vec.y, vec.z);
+    if (!enabled)
+        enable();
+	setUniform3f(name, vec->x, vec->y, vec->z);
 }
 
-void Shader::setUniformMat4f(std::string name, Matrix4f mat)
+void Shader::setUniformMat4f(std::string name, Matrix4f* mat)
 {
-    glUniformMatrix4fv(getUniform(name), sizeof(float) * 16, GL_FALSE, (const GLfloat *)mat.toBuffer());
+    if (!enabled)
+        enable();
+    glUniformMatrix4fv(getUniform(name), 1, GL_FALSE, mat->toBuffer());
 }
 
 void Shader::enable()

@@ -12,16 +12,20 @@
 
 #include "Input.hpp"
 #include "Shader.hpp"
+#include "Matrix4f.hpp"
+#include "Level.hpp"
 
 #include <iostream>
 
 static int width = 1280;
 static int height = 720;
-static float ratio = width / (float)height;
+//static float ratio = width / (float)height;
 
 static bool running = false;
 
 static GLFWwindow *window;
+
+static Level* level;
 
 static void error_callback(int error, const char* description)
 {
@@ -55,8 +59,16 @@ void init()
     glfwMakeContextCurrent(window);
 
     printf("Supported GLSL version is %s.\n", (char *)glGetString(GL_SHADING_LANGUAGE_VERSION));
+    glClearColor(1.0f, 0.0f, 1.0f, 1.0f);
 
     Shader::LoadAll();
+
+    Matrix4f* perspectiveMatrix = Matrix4f::orthographic(-10.0f, 10.0f,
+                                                        -10.0f * 9.0f / 16.0f, 10.0f * 9.0f / 16.0f,
+                                                        -1.0f, 1.0f);
+    Shader::BG_Shader->setUniformMat4f("pr_mat", perspectiveMatrix);
+
+    level = new Level();
 }
 
 void update()
@@ -67,7 +79,17 @@ void update()
 void render()
 {
     glClear(GL_COLOR_BUFFER_BIT);
-    glClearColor(1.0f, 0.0f, 1.0f, 1.0f);
+
+    level->render();
+
+#if 1
+    // Debug
+    int error = glGetError();
+    if (error != GL_NO_ERROR) {
+        std::cout << "GL Error: " << error << std::endl;
+    }
+#endif
+
     glfwSwapBuffers(window);
 }
 
@@ -90,11 +112,6 @@ void run()
         update();
         render();
 
-        int error = glGetError();
-        if (error != GL_NO_ERROR) {
-            std::cout << error << std::endl;
-        }
-
         if (glfwWindowShouldClose(window)) {
             running = false;
         }
@@ -110,7 +127,7 @@ void stop()
 void start()
 {
     running = true;
-    run();
+    run(); // Until told to stop
     stop();
 }
 

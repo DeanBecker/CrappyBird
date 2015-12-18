@@ -70,6 +70,23 @@ int compileProgram(const char * vertexFile, const char * fragmentFile)
     glAttachShader(program, vertId);
     glAttachShader(program, fragId);
     glLinkProgram(program);
+
+    //throw exception if linking failed
+    GLint status;
+    glGetProgramiv(program, GL_LINK_STATUS, &status);
+    if (status == GL_FALSE) {
+        printf("Program linking failure: ");
+
+        GLint infoLogLength;
+        glGetProgramiv(program, GL_INFO_LOG_LENGTH, &infoLogLength);
+        char strInfoLog[infoLogLength + 1];
+        glGetProgramInfoLog(program, infoLogLength, &infoLogLength, strInfoLog);
+        printf("%s", strInfoLog);
+
+        glDeleteProgram(program);
+    }
+
+
     glValidateProgram(program);
 
 

@@ -12,26 +12,26 @@
 #include <stdio.h>
 #include <math.h>
 
+#include "gl_headers.h"
 #include "Vector3f.hpp"
 
 class Matrix4f
 {
 public:
-    static Matrix4f identity();
-    static Matrix4f orthographic(float left,
+    static Matrix4f* identity();
+    static Matrix4f* orthographic(float left,
                                  float right,
                                  float top,
                                  float bottom,
                                  float zNear,
                                  float zFar);
-    static Matrix4f translate(Vector3f* vec);
-    static Matrix4f rotate(float angle);
+    static Matrix4f* translate(Vector3f* vec);
+    static Matrix4f* rotate(float angle);
 
-    Matrix4f multiply(Matrix4f *otherMat);
-    float* toBuffer();
+    Matrix4f* multiply(Matrix4f *otherMat);
+    const GLfloat* toBuffer();
 
-private:
-    float data[];
+    float data[4 * 4];
 };
 
 #endif /* Matrix4f_hpp */

@@ -18,10 +18,11 @@
 class VertexArray
 {
 public:
-    VertexArray(int _count);
+    VertexArray(size_t _count);
     VertexArray(std::vector<float> vertices,
-                std::vector<short> indices,
-                std::vector<float> textureCoords);
+                std::vector<unsigned int> indices,
+                std::vector<float> textureCoords,
+                Shader* shader);
 
     void bind();
     void unbind();
@@ -30,7 +31,7 @@ public:
 
 private:
     GLuint vao, vbo, ibo, tbo;
-    int count;
+    size_t count;
 };
 
 #endif /* VertexArray_hpp */
