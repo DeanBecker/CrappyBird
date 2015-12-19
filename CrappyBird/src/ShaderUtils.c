@@ -8,8 +8,24 @@
 
 #include "ShaderUtils.h"
 
+
 char* getFileContents(const char * fileName)
 {
+#ifdef _WIN32
+#if _DEBUG
+#include <stdio.h>  /* defines FILENAME_MAX */
+#include <direct.h>
+#define GetCurrentDir _getcwd
+	char cCurrentPath[FILENAME_MAX];
+	if (!GetCurrentDir(cCurrentPath, sizeof(cCurrentPath)))
+	{
+		return errno;
+	}
+	cCurrentPath[sizeof(cCurrentPath) - 1] = '\0'; /* not really required */
+	printf("The current working directory is %s", cCurrentPath);
+#endif //_DEBUG
+#endif //_WIN32
+
     char* contents;
     long inputSize;
     FILE* f = fopen(fileName, "rb");
@@ -33,11 +49,12 @@ void logGLSLCompilationError(GLint shaderId)
 {
     GLint errorLen = 0;
     glGetShaderiv(shaderId, GL_INFO_LOG_LENGTH, &errorLen);
-
-    char errorBuffer[errorLen];
+    char **errorBuffer = malloc(errorLen * sizeof(char));
     glGetShaderInfoLog(shaderId, errorLen, &errorLen, errorBuffer);
 
     printf("%s", errorBuffer);
+
+	free(errorBuffer);
 }
 
 int compileProgram(const char * vertexFile, const char * fragmentFile)
@@ -79,10 +96,11 @@ int compileProgram(const char * vertexFile, const char * fragmentFile)
 
         GLint infoLogLength;
         glGetProgramiv(program, GL_INFO_LOG_LENGTH, &infoLogLength);
-        char strInfoLog[infoLogLength + 1];
+        char **strInfoLog = malloc((infoLogLength + 1) * sizeof(char));
         glGetProgramInfoLog(program, infoLogLength, &infoLogLength, strInfoLog);
         printf("%s", strInfoLog);
 
+		free(strInfoLog);
         glDeleteProgram(program);
     }
 

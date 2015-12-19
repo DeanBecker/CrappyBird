@@ -9,6 +9,11 @@
 #ifndef gl_headers_h
 #define gl_headers_h
 
+
+#ifdef _WIN32
+#include <glew.h>
+#endif
+
 #define GLFW_INCLUDE_GLCOREARB
 #include <GLFW/glfw3.h>
 

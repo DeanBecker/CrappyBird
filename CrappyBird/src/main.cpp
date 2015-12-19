@@ -35,16 +35,18 @@ static void error_callback(int error, const char* description)
 void init()
 {
     if (!glfwInit()) {
-        std::cout << "GLFW could not initialise!" << std::endl;
+        std::cout << "GLFW could not initialised!" << std::endl;
         exit(EXIT_FAILURE);
     }
 
     glfwSetErrorCallback(error_callback);
 
+#ifdef __APPLE__ && __MACH__
     glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
     glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 2);
     glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
     glfwWindowHint(GLFW_OPENGL_FORWARD_COMPAT, GL_TRUE);
+#endif
 
     window = glfwCreateWindow(width, height, "Crappy Bird", NULL, NULL);
     if (!window)
@@ -58,7 +60,20 @@ void init()
     glfwSetKeyCallback(window, key_callback);
     glfwMakeContextCurrent(window);
 
+	printf("GL_VERSION: %s\n", (char *)glGetString(GL_VERSION));
     printf("Supported GLSL version is %s.\n", (char *)glGetString(GL_SHADING_LANGUAGE_VERSION));
+
+#ifdef _WIN32
+	glewExperimental = GL_TRUE;
+
+	GLenum glewErr = glewInit();
+	if (glewErr != GLEW_OK)
+	{
+		std::cout << "GLEW could not be initialised!" << std::endl;
+		exit(EXIT_FAILURE);
+	}
+#endif // _WIN32
+
     glClearColor(1.0f, 0.0f, 1.0f, 1.0f);
 
     Shader::LoadAll();
