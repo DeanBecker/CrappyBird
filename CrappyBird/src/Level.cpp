@@ -46,7 +46,8 @@ Level::Level()
 
     rot = 0.5f;
     ///
-
+	
+	/// Background Geometry
 //    std::vector<float> vertices =
 //    {
 //        -10.0f, -10.0f * 9.0f / 16.0f, 0.0f,
@@ -60,6 +61,7 @@ Level::Level()
 //        0, 1, 2,
 //        2, 3, 0
 //    };
+	///
 
     std::vector<float> tcs =
     {
@@ -75,6 +77,6 @@ Level::Level()
 
 Level::~Level()
 {
-    delete background;
-    delete translateMat;
+    if (background) delete background;
+    if (translateMat) delete translateMat;
 }

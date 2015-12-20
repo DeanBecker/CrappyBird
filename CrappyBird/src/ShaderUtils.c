@@ -12,7 +12,7 @@
 char* getFileContents(const char * fileName)
 {
 #ifdef _WIN32
-#if _DEBUG
+#ifdef _DEBUG
 #include <stdio.h>  /* defines FILENAME_MAX */
 #include <direct.h>
 #define GetCurrentDir _getcwd
@@ -22,7 +22,7 @@ char* getFileContents(const char * fileName)
 		return errno;
 	}
 	cCurrentPath[sizeof(cCurrentPath) - 1] = '\0'; /* not really required */
-	printf("The current working directory is %s", cCurrentPath);
+	printf("The current working directory is %s\n", cCurrentPath);
 #endif //_DEBUG
 #endif //_WIN32
 
