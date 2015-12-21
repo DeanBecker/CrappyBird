@@ -29,16 +29,6 @@ Texture::Texture(std::string filePath)
 	//textureId = getTextureData(filePath.c_str());
 	Bitmap bmp = Bitmap::bitmapFromFile(filePath);
 	bmp.flipVertically();
-	//GLuint textureId;
-	//glGenTextures(1, &textureId);
-	//glBindTexture(GL_TEXTURE_2D, textureId);
-
-	//glTextureParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
-	//glTextureParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
-
-	//glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, width, height, 0, GL_RGB, GL_UNSIGNED_BYTE, data);
-
-	//glBindTexture(GL_TEXTURE_2D, 0);
 
 	glGenTextures(1, &textureId);
 	glBindTexture(GL_TEXTURE_2D, textureId);

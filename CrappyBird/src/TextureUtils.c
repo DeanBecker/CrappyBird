@@ -2,6 +2,7 @@
 
 GLuint getTextureData(const char * filePath)
 {
+	// Broken .bmp file parsing????
 	FILE* f = fopen(filePath, "rb");
 	if (!f) printf("Could not open: %s\n", filePath);
 
@@ -27,6 +28,7 @@ GLuint getTextureData(const char * filePath)
 	fclose(f);
 	if (f) free(f);
 
+	// Probably working opengl texture binding
 	GLuint textureId;
 	glGenTextures(1, &textureId);
 	glBindTexture(GL_TEXTURE_2D, textureId);
