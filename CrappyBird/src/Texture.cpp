@@ -3,7 +3,7 @@
 //  CrappyBird
 //
 //  Created by Dean Becker on 20/12/2015.
-//  Copyright © 2015 Dean Becker. All rights reserved.
+//  Copyright ï¿½ 2015 Dean Becker. All rights reserved.
 
 #include "Texture.hpp"
 
@@ -16,8 +16,6 @@ static int activeTextures = 0;
 static GLenum TextureFormatForBitmapFormat(Bitmap::Format format)
 {
 	switch (format) {
-	case Bitmap::Format_Grayscale: return GL_LUMINANCE;
-	case Bitmap::Format_GrayscaleAlpha: return GL_LUMINANCE_ALPHA;
 	case Bitmap::Format_RGB: return GL_RGB;
 	case Bitmap::Format_RGBA: return GL_RGBA;
 	default: throw std::runtime_error("Unrecognised Bitmap::Format");

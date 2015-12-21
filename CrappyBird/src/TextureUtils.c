@@ -22,7 +22,7 @@ GLuint getTextureData(const char * filePath)
 	if (dataPos == 0) dataPos = 54;
 
 	size_t dMul = sizeof(unsigned char);
-	unsigned char* data = malloc(imageSize * dMul);
+	unsigned char* data = (unsigned char*)malloc(imageSize * dMul);
 	fread(data, 1, imageSize, f);
 
 	fclose(f);
@@ -33,8 +33,14 @@ GLuint getTextureData(const char * filePath)
 	glGenTextures(1, &textureId);
 	glBindTexture(GL_TEXTURE_2D, textureId);
 
+#ifdef _WIN32
 	glTextureParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
 	glTextureParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
+#endif
+#ifdef __APPLE__
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
+#endif
 
 	glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, width, height, 0, GL_RGB, GL_UNSIGNED_BYTE, data);
 
