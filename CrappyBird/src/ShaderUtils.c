@@ -9,7 +9,7 @@
 #include "ShaderUtils.h"
 
 
-char* getFileContents(const char * fileName)
+char* getShaderData(const char * fileName)
 {
 #ifdef _WIN32
 #ifdef _DEBUG
@@ -19,7 +19,7 @@ char* getFileContents(const char * fileName)
 	char cCurrentPath[FILENAME_MAX];
 	if (!GetCurrentDir(cCurrentPath, sizeof(cCurrentPath)))
 	{
-		return errno;
+		return (char *)errno;
 	}
 	cCurrentPath[sizeof(cCurrentPath) - 1] = '\0'; /* not really required */
 	printf("The current working directory is %s\n", cCurrentPath);
@@ -59,8 +59,8 @@ void logGLSLCompilationError(GLint shaderId)
 
 int compileProgram(const char * vertexFile, const char * fragmentFile)
 {
-    const GLchar* vertexShader = getFileContents(vertexFile);
-    const GLchar* fragmentShader = getFileContents(fragmentFile);
+    const GLchar* vertexShader = getShaderData(vertexFile);
+    const GLchar* fragmentShader = getShaderData(fragmentFile);
 
     int program = glCreateProgram();
     int vertId = glCreateShader(GL_VERTEX_SHADER);

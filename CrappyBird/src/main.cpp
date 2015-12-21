@@ -41,12 +41,14 @@ void init()
 
     glfwSetErrorCallback(error_callback);
 
-#ifdef __APPLE__ && __MACH__
+#ifdef __APPLE__ 
+#ifdef __MACH__
     glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
     glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 2);
     glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
     glfwWindowHint(GLFW_OPENGL_FORWARD_COMPAT, GL_TRUE);
-#endif
+#endif /* __MACH__ */
+#endif /* __APPLE__ */
 
     window = glfwCreateWindow(width, height, "Crappy Bird", NULL, NULL);
     if (!window)

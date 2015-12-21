@@ -14,6 +14,7 @@
 
 #include "Shader.hpp"
 #include "VertexArray.hpp"
+#include "Texture.hpp"
 
 class Level
 {
@@ -24,7 +25,7 @@ public:
     void update();
     void render();
 
-    float rot;
+    float rot = 0.0f;
 };
 
 #endif /* Level_hpp */

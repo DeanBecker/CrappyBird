@@ -12,6 +12,7 @@
 #include <string>
 
 #include "gl_headers.h"
+#include "Bitmap.hpp"
 
 class Texture 
 {
@@ -23,10 +24,8 @@ public:
 	void unbind();
 
 private:
-	int textureId;
-	int width, height;
-
-	int loadTexture(std::string filePath);
+	GLuint textureId;
+	GLint ActiveTexture;
 };
 
 #endif /* Texture_hpp */

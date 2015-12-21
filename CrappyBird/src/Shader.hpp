@@ -29,9 +29,6 @@ public:
     // Static Shader Instances
     static Shader* BG_Shader;
 
-    static const int VERTEX_ATTRIB = 0;
-    static const int TCOORD_ATTRIB = 1;
-
     Shader(std::string vert, std::string frag);
 
     static void LoadAll();

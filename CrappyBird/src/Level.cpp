@@ -9,7 +9,8 @@
 #include "Level.hpp"
 
 VertexArray* background;
-Matrix4f* translateMat;
+Matrix4f* translateMat = Matrix4f::identity();
+Texture* tex;
 
 void Level::update()
 {
@@ -18,6 +19,11 @@ void Level::update()
 
 void Level::render()
 {
+	if (tex)
+	{
+		tex->bind();
+		Shader::BG_Shader->setUniform1i("tex", 0);
+	}
     Shader* bg = Shader::BG_Shader;
     bg->enable();
 
@@ -25,14 +31,15 @@ void Level::render()
     bg->setUniformMat4f("vw_mat", translateMat);
     background->render();
 
-    background->unbind();
+	background->unbind();
     bg->disable();
+	if (tex) tex->unbind();
 }
 
 Level::Level()
 {
     /// Debug Triangle
-    std::vector<float> vertices =
+   /* std::vector<float> vertices =
     {
         0.0f, 0.8f, 0.0f,
         -0.8f,-0.8f, 0.0f,
@@ -44,23 +51,23 @@ Level::Level()
         0, 1, 2
     };
 
-    rot = 0.5f;
+    rot = 0.5f;*/
     ///
 	
 	/// Background Geometry
-//    std::vector<float> vertices =
-//    {
-//        -10.0f, -10.0f * 9.0f / 16.0f, 0.0f,
-//        -10.0f, 10.0f * 9.0f / 16.0f, 0.0f,
-//        0.0f, 10.0f * 9.0f / 16.0f, 0.0f,
-//        0.0f, -10.0f * 9.0f / 16.0f, 0.0f
-//    };
-//
-//    std::vector<unsigned int> indices =
-//    {
-//        0, 1, 2,
-//        2, 3, 0
-//    };
+    std::vector<float> vertices =
+    {
+        -10.0f, -10.0f * 9.0f / 16.0f, 0.0f,
+        -10.0f, 10.0f * 9.0f / 16.0f, 0.0f,
+        0.0f, 10.0f * 9.0f / 16.0f, 0.0f,
+        0.0f, -10.0f * 9.0f / 16.0f, 0.0f
+    };
+
+    std::vector<unsigned int> indices =
+    {
+        0, 1, 2,
+        2, 3, 0
+    };
 	///
 
     std::vector<float> tcs =
@@ -71,12 +78,13 @@ Level::Level()
         1, 1
     };
 
+	tex = new Texture("res/bg.bmp");
     background = new VertexArray(vertices, indices, tcs, Shader::BG_Shader);
-    translateMat = Matrix4f::identity();
 }
 
 Level::~Level()
 {
+	if (tex) delete tex;
     if (background) delete background;
     if (translateMat) delete translateMat;
 }

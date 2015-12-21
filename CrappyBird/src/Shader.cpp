@@ -12,6 +12,7 @@ extern "C" {
     #include "ShaderUtils.h"
 }
 
+std::unordered_map<std::string, GLuint> attribCache;
 std::unordered_map<std::string, GLint> uniformCache;
 bool enabled;
 
@@ -29,7 +30,15 @@ void Shader::LoadAll()
 
 int Shader::getAttrib(std::string name)
 {
-    GLuint attribLoc = glGetAttribLocation(programId, name.c_str());
+	std::unordered_map<std::string, GLuint>::const_iterator lookup = attribCache.find(name.c_str());
+	if (lookup != attribCache.end()) {
+		// Cached value
+		return lookup->second;
+	}
+
+    GLint attribLoc = glGetAttribLocation(programId, name.c_str());
+	attribCache.insert( { name, attribLoc } );
+
     return attribLoc;
 }
 
