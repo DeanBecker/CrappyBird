@@ -17,4 +17,13 @@
 #define GLFW_INCLUDE_GLCOREARB
 #include <GLFW/glfw3.h>
 
+/// Graphics Structs
+struct TextureData_def;
+typedef struct TextureData_def
+{
+	int width, height, imageSize;
+	GLuint Id;
+} TextureData;
+///
+
 #endif /* gl_headers_h */

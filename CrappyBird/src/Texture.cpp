@@ -16,9 +16,11 @@ static int activeTextures = 0;
 Texture::Texture(std::string filePath)
 {
 	/// Home grown texture loading
-	textureId = getTextureData(filePath.c_str());
+	TextureData data = getTextureData(filePath.c_str());
 	///
-
+	width = data.width;
+	height = data.height;
+	textureId = data.Id;
 	ActiveTexture = activeTextures++;
 }
 

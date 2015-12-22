@@ -19,6 +19,8 @@ public:
 	Texture(std::string filePath);
 	~Texture();
 
+	int width, height;
+	
 	void bind();
 	void unbind();
 
