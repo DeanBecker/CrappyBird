@@ -16,5 +16,5 @@ void main()
 {
 	gl_Position = pr_mat * vw_mat * vec4(pos, 1.0f);
 	vert_out.uv = vert_tc.xy;
-    vert_out.position = (vw_mat * vec4(pos, 1.0f)).xyz;
+	vert_out.position = (vw_mat * vec4(pos, 1.0f)).xyz;
 }

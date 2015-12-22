@@ -12,6 +12,10 @@
 		EB3A5AD21C1F61F2006F4AF6 /* Vector3f.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EB3A5AD01C1F61F2006F4AF6 /* Vector3f.cpp */; };
 		EB3A5AD51C1F632F006F4AF6 /* Matrix4f.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EB3A5AD31C1F632F006F4AF6 /* Matrix4f.cpp */; };
 		EB44BAAE1C1F2E3C0029AF4C /* Input.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EB44BAAC1C1F2E3C0029AF4C /* Input.cpp */; };
+		EB8A67781C28467F00D50064 /* Bitmap.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EB8A67711C28467F00D50064 /* Bitmap.cpp */; };
+		EB8A67791C28467F00D50064 /* Texture.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EB8A67741C28467F00D50064 /* Texture.cpp */; };
+		EB8A677A1C28467F00D50064 /* TextureUtils.c in Sources */ = {isa = PBXBuildFile; fileRef = EB8A67761C28467F00D50064 /* TextureUtils.c */; };
+		EB8A677B1C284C4300D50064 /* res in CopyFiles */ = {isa = PBXBuildFile; fileRef = EB101E491C218F90001886B1 /* res */; };
 		EB8D161A1C1F18CF00B02657 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EB8D16191C1F18CF00B02657 /* main.cpp */; };
 		EB8D16211C1F18F900B02657 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB8D16201C1F18F900B02657 /* OpenGL.framework */; };
 		EB8D16231C1F190700B02657 /* libglfw3.3.1.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = EB8D16221C1F190700B02657 /* libglfw3.3.1.dylib */; };
@@ -28,6 +32,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 16;
 			files = (
+				EB8A677B1C284C4300D50064 /* res in CopyFiles */,
 				EBEFC7C01C2057530019DC1F /* shaders in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -46,6 +51,13 @@
 		EB3A5AD41C1F632F006F4AF6 /* Matrix4f.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Matrix4f.hpp; sourceTree = "<group>"; };
 		EB44BAAC1C1F2E3C0029AF4C /* Input.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Input.cpp; sourceTree = "<group>"; };
 		EB44BAAD1C1F2E3C0029AF4C /* Input.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Input.hpp; sourceTree = "<group>"; };
+		EB8A67711C28467F00D50064 /* Bitmap.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Bitmap.cpp; sourceTree = "<group>"; };
+		EB8A67721C28467F00D50064 /* Bitmap.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Bitmap.hpp; sourceTree = "<group>"; };
+		EB8A67731C28467F00D50064 /* stb_image.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = stb_image.h; sourceTree = "<group>"; };
+		EB8A67741C28467F00D50064 /* Texture.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Texture.cpp; sourceTree = "<group>"; };
+		EB8A67751C28467F00D50064 /* Texture.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Texture.hpp; sourceTree = "<group>"; };
+		EB8A67761C28467F00D50064 /* TextureUtils.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = TextureUtils.c; sourceTree = "<group>"; };
+		EB8A67771C28467F00D50064 /* TextureUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextureUtils.h; sourceTree = "<group>"; };
 		EB8D16161C1F18CF00B02657 /* CrappyBird */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = CrappyBird; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB8D16191C1F18CF00B02657 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		EB8D16201C1F18F900B02657 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
@@ -85,6 +97,11 @@
 		EB3A5ACB1C1F588F006F4AF6 /* Graphics */ = {
 			isa = PBXGroup;
 			children = (
+				EB8A67711C28467F00D50064 /* Bitmap.cpp */,
+				EB8A67721C28467F00D50064 /* Bitmap.hpp */,
+				EB8A67731C28467F00D50064 /* stb_image.h */,
+				EB8A67741C28467F00D50064 /* Texture.cpp */,
+				EB8A67751C28467F00D50064 /* Texture.hpp */,
 				EB3A5ACC1C1F58A8006F4AF6 /* Shader.cpp */,
 				EB3A5ACD1C1F58A8006F4AF6 /* Shader.hpp */,
 				EBEFC7C11C206A240019DC1F /* VertexArray.cpp */,
@@ -167,6 +184,8 @@
 		EBEFC7B91C2036C50019DC1F /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				EB8A67761C28467F00D50064 /* TextureUtils.c */,
+				EB8A67771C28467F00D50064 /* TextureUtils.h */,
 				EBEFC7BC1C2037D00019DC1F /* ShaderUtils.c */,
 				EBEFC7BD1C2037D00019DC1F /* ShaderUtils.h */,
 			);
@@ -231,10 +250,13 @@
 			files = (
 				EBEFC7BE1C2037D00019DC1F /* ShaderUtils.c in Sources */,
 				EB44BAAE1C1F2E3C0029AF4C /* Input.cpp in Sources */,
+				EB8A67781C28467F00D50064 /* Bitmap.cpp in Sources */,
 				EB101E481C218F62001886B1 /* Level.cpp in Sources */,
 				EBEFC7C31C206A240019DC1F /* VertexArray.cpp in Sources */,
+				EB8A67791C28467F00D50064 /* Texture.cpp in Sources */,
 				EB3A5AD21C1F61F2006F4AF6 /* Vector3f.cpp in Sources */,
 				EB3A5AD51C1F632F006F4AF6 /* Matrix4f.cpp in Sources */,
+				EB8A677A1C28467F00D50064 /* TextureUtils.c in Sources */,
 				EB3A5ACE1C1F58A8006F4AF6 /* Shader.cpp in Sources */,
 				EB8D161A1C1F18CF00B02657 /* main.cpp in Sources */,
 			);
