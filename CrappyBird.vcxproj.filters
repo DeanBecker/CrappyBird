@@ -57,12 +57,6 @@
     <ClInclude Include="CrappyBird\src\TextureUtils.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="CrappyBird\src\stb_image.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="CrappyBird\src\Bitmap.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="CrappyBird\src\main.cpp">
@@ -94,9 +88,6 @@
     </ClCompile>
     <ClCompile Include="CrappyBird\src\TextureUtils.c">
       <Filter>Source Files\Graphics</Filter>
-    </ClCompile>
-    <ClCompile Include="CrappyBird\src\Bitmap.cpp">
-      <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

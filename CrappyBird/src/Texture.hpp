@@ -12,7 +12,6 @@
 #include <string>
 
 #include "gl_headers.h"
-#include "Bitmap.hpp"
 
 class Texture 
 {
