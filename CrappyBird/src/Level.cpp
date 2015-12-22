@@ -16,7 +16,8 @@ float xScroll = 0.0f;
 
 void Level::update()
 {
-    xScroll -= 0.01f;
+    xScroll -= 0.03f;
+    if (xScroll <= -10.0f) xScroll = 0.0f;
 }
 
 void Level::render()
