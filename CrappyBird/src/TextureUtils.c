@@ -25,7 +25,6 @@ TextureData getTextureData(const char * filePath)
 	fread(data, 1, textureData.imageSize, f);
 
 	fclose(f);
-	if (f) free(f);
 
 	glGenTextures(1, &textureData.Id);
 	glBindTexture(GL_TEXTURE_2D, textureData.Id);
