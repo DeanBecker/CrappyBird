@@ -90,6 +90,7 @@ void init()
 
 void update()
 {
+    level->update();
     glfwPollEvents();
 }
 

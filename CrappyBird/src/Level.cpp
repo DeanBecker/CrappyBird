@@ -12,9 +12,11 @@ VertexArray* background;
 Matrix4f* translateMat = Matrix4f::identity();
 Texture* tex;
 
+float xScroll = 0.0f;
+
 void Level::update()
 {
-
+    xScroll -= 0.01f;
 }
 
 void Level::render()
@@ -27,9 +29,19 @@ void Level::render()
     Shader* bg = Shader::BG_Shader;
     bg->enable();
 
-    translateMat = translateMat->multiply(Matrix4f::rotate(rot));
-    bg->setUniformMat4f("vw_mat", translateMat);
-    background->render();
+    int backgroundTileQty = 3;
+    Matrix4f* tileTranslate;
+    background->bind();
+    for (int bg_i = 0; bg_i < backgroundTileQty; bg_i++) {
+        Vector3f tileVec = Vector3f((10.0f * bg_i) + xScroll, 0.0f, 0.0f);
+        tileTranslate = Matrix4f::identity()->multiply(Matrix4f::translate(&tileVec));
+        bg->setUniformMat4f("vw_mat", tileTranslate);
+        background->draw();
+    }
+    if (tileTranslate) delete tileTranslate;
+
+//    bg->setUniformMat4f("vw_mat", translateMat);
+//    background->render();
 
 	background->unbind();
     bg->disable();
