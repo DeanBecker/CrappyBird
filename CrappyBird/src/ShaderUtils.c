@@ -107,6 +107,10 @@ int compileProgram(const char * vertexFile, const char * fragmentFile)
 
     glValidateProgram(program);
 
+    int error = glGetError();
+    if (error != GL_NO_ERROR) {
+        printf("GL Shader Error: %i", error);
+    }
 
     glDeleteShader(vertId);
     glDeleteShader(fragId);

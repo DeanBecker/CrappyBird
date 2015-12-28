@@ -77,6 +77,10 @@ void init()
 #endif // _WIN32
 
     glClearColor(1.0f, 0.0f, 1.0f, 1.0f);
+    glEnable(GL_DEPTH_TEST);
+    glActiveTexture(GL_TEXTURE1);
+    glEnable(GL_BLEND);
+    glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 
     Shader::LoadAll();
 
@@ -84,6 +88,9 @@ void init()
                                                         -10.0f * 9.0f / 16.0f, 10.0f * 9.0f / 16.0f,
                                                         -1.0f, 1.0f);
     Shader::BG_Shader->setUniformMat4f("pr_mat", perspectiveMatrix);
+    Shader::BG_Shader->setUniform1i("tex", 1);
+    Shader::Bird_Shader->setUniformMat4f("pr_mat", perspectiveMatrix);
+    Shader::Bird_Shader->setUniform1i("tex", 1);
 
     level = new Level();
 }

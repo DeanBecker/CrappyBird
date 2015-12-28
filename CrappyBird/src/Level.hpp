@@ -16,6 +16,8 @@
 #include "VertexArray.hpp"
 #include "Texture.hpp"
 
+#include "Bird.hpp"
+
 class Level
 {
 public:
@@ -26,6 +28,14 @@ public:
     void render();
 
     float rot = 0.0f;
+
+private:
+    VertexArray* background;
+    Matrix4f* translateMat = Matrix4f::identity();
+    Texture* tex;
+
+    Bird* bird;
+    float xScroll = 0.0f;
 };
 
 #endif /* Level_hpp */
