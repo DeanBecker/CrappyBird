@@ -60,6 +60,9 @@
     <ClInclude Include="CrappyBird\src\Bird.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="CrappyBird\src\stb_image.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="CrappyBird\src\main.cpp">

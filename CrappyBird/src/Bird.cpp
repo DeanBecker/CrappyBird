@@ -36,7 +36,7 @@ Bird::Bird()
 
     birdShader = Shader::Bird_Shader;
     model = new VertexArray(vertices, indices, texCoords, birdShader);
-    tex = new Texture("res/bird.bmp");
+    tex = new Texture("res/bird.png", FILE_TYPE::PNG);
 }
 
 Bird::~Bird()

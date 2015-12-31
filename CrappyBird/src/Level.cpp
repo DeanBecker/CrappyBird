@@ -91,7 +91,7 @@ Level::Level()
         1, 1
     };
 
-	tex = new Texture("res/bg.bmp");
+	tex = new Texture("res/bg.bmp", FILE_TYPE::BMP);
     background = new VertexArray(vertices, indices, tcs, Shader::BG_Shader);
 
     bird = new Bird();

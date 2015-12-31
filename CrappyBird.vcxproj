@@ -161,6 +161,7 @@
     <ClInclude Include="CrappyBird\src\Matrix4f.hpp" />
     <ClInclude Include="CrappyBird\src\Shader.hpp" />
     <ClInclude Include="CrappyBird\src\ShaderUtils.h" />
+    <ClInclude Include="CrappyBird\src\stb_image.h" />
     <ClInclude Include="CrappyBird\src\Texture.hpp" />
     <ClInclude Include="CrappyBird\src\TextureUtils.h" />
     <ClInclude Include="CrappyBird\src\Vector3f.hpp" />
