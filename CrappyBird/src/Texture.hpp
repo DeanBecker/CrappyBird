@@ -3,7 +3,7 @@
 //  CrappyBird
 //
 //  Created by Dean Becker on 20/12/2015.
-//  Copyright © 2015 Dean Becker. All rights reserved.
+//  Copyright ï¿½ 2015 Dean Becker. All rights reserved.
 //
 
 #ifndef Texture_hpp
@@ -20,13 +20,10 @@ public:
 	~Texture();
 
 	int width, height;
+    GLuint textureId;
 	
 	void bind();
 	void unbind();
-
-private:
-	GLuint textureId;
-	GLint ActiveTexture;
 };
 
 #endif /* Texture_hpp */

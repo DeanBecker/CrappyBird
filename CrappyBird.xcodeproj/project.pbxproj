@@ -12,7 +12,7 @@
 		EB3A5AD21C1F61F2006F4AF6 /* Vector3f.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EB3A5AD01C1F61F2006F4AF6 /* Vector3f.cpp */; };
 		EB3A5AD51C1F632F006F4AF6 /* Matrix4f.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EB3A5AD31C1F632F006F4AF6 /* Matrix4f.cpp */; };
 		EB44BAAE1C1F2E3C0029AF4C /* Input.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EB44BAAC1C1F2E3C0029AF4C /* Input.cpp */; };
-		EB8A67781C28467F00D50064 /* Bitmap.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EB8A67711C28467F00D50064 /* Bitmap.cpp */; };
+		EB52A9BB1C2C490400184838 /* Bird.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EB52A9B91C2C490400184838 /* Bird.cpp */; };
 		EB8A67791C28467F00D50064 /* Texture.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EB8A67741C28467F00D50064 /* Texture.cpp */; };
 		EB8A677A1C28467F00D50064 /* TextureUtils.c in Sources */ = {isa = PBXBuildFile; fileRef = EB8A67761C28467F00D50064 /* TextureUtils.c */; };
 		EB8A677B1C284C4300D50064 /* res in CopyFiles */ = {isa = PBXBuildFile; fileRef = EB101E491C218F90001886B1 /* res */; };
@@ -51,9 +51,8 @@
 		EB3A5AD41C1F632F006F4AF6 /* Matrix4f.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Matrix4f.hpp; sourceTree = "<group>"; };
 		EB44BAAC1C1F2E3C0029AF4C /* Input.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Input.cpp; sourceTree = "<group>"; };
 		EB44BAAD1C1F2E3C0029AF4C /* Input.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Input.hpp; sourceTree = "<group>"; };
-		EB8A67711C28467F00D50064 /* Bitmap.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Bitmap.cpp; sourceTree = "<group>"; };
-		EB8A67721C28467F00D50064 /* Bitmap.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Bitmap.hpp; sourceTree = "<group>"; };
-		EB8A67731C28467F00D50064 /* stb_image.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = stb_image.h; sourceTree = "<group>"; };
+		EB52A9B91C2C490400184838 /* Bird.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Bird.cpp; sourceTree = "<group>"; };
+		EB52A9BA1C2C490400184838 /* Bird.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Bird.hpp; sourceTree = "<group>"; };
 		EB8A67741C28467F00D50064 /* Texture.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Texture.cpp; sourceTree = "<group>"; };
 		EB8A67751C28467F00D50064 /* Texture.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Texture.hpp; sourceTree = "<group>"; };
 		EB8A67761C28467F00D50064 /* TextureUtils.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = TextureUtils.c; sourceTree = "<group>"; };
@@ -90,6 +89,8 @@
 			children = (
 				EB101E461C218F62001886B1 /* Level.cpp */,
 				EB101E471C218F62001886B1 /* Level.hpp */,
+				EB52A9B91C2C490400184838 /* Bird.cpp */,
+				EB52A9BA1C2C490400184838 /* Bird.hpp */,
 			);
 			name = Game;
 			sourceTree = "<group>";
@@ -97,9 +98,6 @@
 		EB3A5ACB1C1F588F006F4AF6 /* Graphics */ = {
 			isa = PBXGroup;
 			children = (
-				EB8A67711C28467F00D50064 /* Bitmap.cpp */,
-				EB8A67721C28467F00D50064 /* Bitmap.hpp */,
-				EB8A67731C28467F00D50064 /* stb_image.h */,
 				EB8A67741C28467F00D50064 /* Texture.cpp */,
 				EB8A67751C28467F00D50064 /* Texture.hpp */,
 				EB3A5ACC1C1F58A8006F4AF6 /* Shader.cpp */,
@@ -250,11 +248,11 @@
 			files = (
 				EBEFC7BE1C2037D00019DC1F /* ShaderUtils.c in Sources */,
 				EB44BAAE1C1F2E3C0029AF4C /* Input.cpp in Sources */,
-				EB8A67781C28467F00D50064 /* Bitmap.cpp in Sources */,
 				EB101E481C218F62001886B1 /* Level.cpp in Sources */,
 				EBEFC7C31C206A240019DC1F /* VertexArray.cpp in Sources */,
 				EB8A67791C28467F00D50064 /* Texture.cpp in Sources */,
 				EB3A5AD21C1F61F2006F4AF6 /* Vector3f.cpp in Sources */,
+				EB52A9BB1C2C490400184838 /* Bird.cpp in Sources */,
 				EB3A5AD51C1F632F006F4AF6 /* Matrix4f.cpp in Sources */,
 				EB8A677A1C28467F00D50064 /* TextureUtils.c in Sources */,
 				EB3A5ACE1C1F58A8006F4AF6 /* Shader.cpp in Sources */,

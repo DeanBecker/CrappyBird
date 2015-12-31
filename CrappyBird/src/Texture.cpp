@@ -21,7 +21,6 @@ Texture::Texture(std::string filePath)
 	width = data.width;
 	height = data.height;
 	textureId = data.Id;
-	ActiveTexture = activeTextures++;
 }
 
 Texture::~Texture()
@@ -30,7 +29,6 @@ Texture::~Texture()
 
 void Texture::bind()
 {
-	glActiveTexture(GL_TEXTURE0 + ActiveTexture);
 	glBindTexture(GL_TEXTURE_2D, textureId);
 }
 

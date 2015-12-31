@@ -8,32 +8,45 @@
 
 #include "Level.hpp"
 
-VertexArray* background;
-Matrix4f* translateMat = Matrix4f::identity();
-Texture* tex;
 
 void Level::update()
 {
+    xScroll -= 0.03f;
+    if (xScroll <= -10.0f) xScroll = 0.0f;
 
+    bird->update();
 }
 
 void Level::render()
 {
+    Shader* bg = Shader::BG_Shader;
+
+    /// Background
 	if (tex)
 	{
 		tex->bind();
-		Shader::BG_Shader->setUniform1i("tex", 0);
 	}
-    Shader* bg = Shader::BG_Shader;
     bg->enable();
 
-    translateMat = translateMat->multiply(Matrix4f::rotate(rot));
-    bg->setUniformMat4f("vw_mat", translateMat);
-    background->render();
+    int backgroundTileQty = 3;
+    Matrix4f* tileTranslate;
+    background->bind();
+    for (int bg_i = 0; bg_i < backgroundTileQty; bg_i++) {
+        Vector3f tileVec = Vector3f((10.0f * bg_i) + xScroll, 0.0f, 0.0f);
+        tileTranslate = Matrix4f::identity()->multiply(Matrix4f::translate(&tileVec));
+        bg->setUniformMat4f("vw_mat", tileTranslate);
+        background->draw();
+    }
+    if (tileTranslate) delete tileTranslate;
 
 	background->unbind();
     bg->disable();
 	if (tex) tex->unbind();
+    ///
+
+    /// Bird
+    bird->render();
+    ///
 }
 
 Level::Level()
@@ -80,6 +93,8 @@ Level::Level()
 
 	tex = new Texture("res/bg.bmp");
     background = new VertexArray(vertices, indices, tcs, Shader::BG_Shader);
+
+    bird = new Bird();
 }
 
 Level::~Level()
