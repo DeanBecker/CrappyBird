@@ -51,7 +51,7 @@ public:
 private:
     std::unordered_map<std::string, GLuint> attribCache;
     std::unordered_map<std::string, GLint> uniformCache;
-    bool enabled;
+    bool enabled = false;
 };
 
 #endif /* Shader_hpp */

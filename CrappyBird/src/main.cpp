@@ -82,6 +82,11 @@ void init()
     glEnable(GL_BLEND);
     glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 
+	int error = glGetError();
+	if (error != GL_NO_ERROR) {
+		printf("GL Init Error: %i", error);
+	}
+
     Shader::LoadAll();
 
     Matrix4f* perspectiveMatrix = Matrix4f::orthographic(-10.0f, 10.0f,

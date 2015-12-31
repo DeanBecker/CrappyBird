@@ -154,6 +154,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="CrappyBird\src\Bird.hpp" />
     <ClInclude Include="CrappyBird\src\gl_headers.h" />
     <ClInclude Include="CrappyBird\src\Input.hpp" />
     <ClInclude Include="CrappyBird\src\Level.hpp" />
@@ -166,6 +167,7 @@
     <ClInclude Include="CrappyBird\src\VertexArray.hpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="CrappyBird\src\Bird.cpp" />
     <ClCompile Include="CrappyBird\src\Input.cpp" />
     <ClCompile Include="CrappyBird\src\Level.cpp" />
     <ClCompile Include="CrappyBird\src\main.cpp" />
