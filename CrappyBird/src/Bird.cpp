@@ -65,6 +65,8 @@ void Bird::update()
 	else {
 		pos_delta -= FALL_ACCEL;
 	}
+
+	rotation = -pos_delta * 90.0f;
 }
 
 void Bird::render()
@@ -75,7 +77,7 @@ void Bird::render()
         tex->bind();
     }
 
-	Matrix4f* translateMat = Matrix4f::identity()->translate(position);
+	Matrix4f* translateMat = Matrix4f::identity()->translate(position)->multiply(Matrix4f::rotate(rotation));
     birdShader->setUniformMat4f("vw_mat", translateMat);
     model->render();
 
