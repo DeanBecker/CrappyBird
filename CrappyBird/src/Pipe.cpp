@@ -44,6 +44,10 @@ Pipe::~Pipe()
 	if (texture) delete texture;
 }
 
+void Pipe::update()
+{
+}
+
 void Pipe::render()
 {
 	pipeShader->enable();

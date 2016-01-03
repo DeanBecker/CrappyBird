@@ -46,7 +46,7 @@ void Level::render()
     ///
 
 	/// Pipes
-	for (std::vector<Pipe*>::iterator i = pipes.begin(); i != pipes.end(); ++i)
+	for (std::vector<IRenderable*>::iterator i = pipes.begin(); i != pipes.end(); ++i)
 	{
 		(*i)->render();
 	}
@@ -117,7 +117,7 @@ Level::~Level()
     if (background) delete background;
     if (translateMat) delete translateMat;
 
-	for (std::vector<Pipe *>::iterator i = pipes.begin(); i != pipes.end(); ++i)
+	for (std::vector<IRenderable *>::iterator i = pipes.begin(); i != pipes.end(); ++i)
 	{
 		delete *i;
 	}

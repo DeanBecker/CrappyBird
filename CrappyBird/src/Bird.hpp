@@ -12,11 +12,13 @@
 #include <stdio.h>
 #include <vector>
 
+#include "IRenderable.hpp"
+
 #include "Shader.hpp"
 #include "VertexArray.hpp"
 #include "Texture.hpp"
 
-class Bird
+class Bird : public IRenderable
 {
 public:
     Bird();

@@ -11,17 +11,20 @@
 
 #include <vector>
 
+#include "IRenderable.hpp"
+
 #include "VertexArray.hpp"
 #include "Texture.hpp"
 #include "Shader.hpp"
 #include "Matrix4f.hpp"
 
-class Pipe
+class Pipe : public IRenderable
 {
 public:
 	Pipe();
 	~Pipe();
 
+	void update();
 	void render();
 
 private:

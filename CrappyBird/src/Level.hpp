@@ -15,11 +15,12 @@
 #include "Shader.hpp"
 #include "VertexArray.hpp"
 #include "Texture.hpp"
+#include "IRenderable.hpp"
 
 #include "Bird.hpp"
 #include "Pipe.hpp"
 
-class Level
+class Level : public IRenderable
 {
 public:
     Level();
@@ -35,9 +36,9 @@ private:
     Matrix4f* translateMat = Matrix4f::identity();
     Texture* tex;
 
-    Bird* bird;
+    IRenderable* bird;
     float xScroll = 0.0f;
-	std::vector<Pipe *> pipes;
+	std::vector<IRenderable *> pipes;
 };
 
 #endif /* Level_hpp */

@@ -157,6 +157,7 @@
     <ClInclude Include="CrappyBird\src\Bird.hpp" />
     <ClInclude Include="CrappyBird\src\gl_headers.h" />
     <ClInclude Include="CrappyBird\src\Input.hpp" />
+    <ClInclude Include="CrappyBird\src\IRenderable.hpp" />
     <ClInclude Include="CrappyBird\src\Level.hpp" />
     <ClInclude Include="CrappyBird\src\Matrix4f.hpp" />
     <ClInclude Include="CrappyBird\src\Pipe.hpp" />
