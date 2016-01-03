@@ -29,6 +29,7 @@ public:
     // Static Shader Instances
     static Shader* BG_Shader;
     static Shader* Bird_Shader;
+	static Shader* Pipe_Shader;
 
     Shader(std::string vert, std::string frag);
 

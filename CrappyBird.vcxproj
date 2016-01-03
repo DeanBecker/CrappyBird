@@ -159,6 +159,7 @@
     <ClInclude Include="CrappyBird\src\Input.hpp" />
     <ClInclude Include="CrappyBird\src\Level.hpp" />
     <ClInclude Include="CrappyBird\src\Matrix4f.hpp" />
+    <ClInclude Include="CrappyBird\src\Pipe.hpp" />
     <ClInclude Include="CrappyBird\src\Shader.hpp" />
     <ClInclude Include="CrappyBird\src\ShaderUtils.h" />
     <ClInclude Include="CrappyBird\src\stb_image.h" />
@@ -173,6 +174,7 @@
     <ClCompile Include="CrappyBird\src\Level.cpp" />
     <ClCompile Include="CrappyBird\src\main.cpp" />
     <ClCompile Include="CrappyBird\src\Matrix4f.cpp" />
+    <ClCompile Include="CrappyBird\src\Pipe.cpp" />
     <ClCompile Include="CrappyBird\src\Shader.cpp" />
     <ClCompile Include="CrappyBird\src\ShaderUtils.c" />
     <ClCompile Include="CrappyBird\src\Texture.cpp" />

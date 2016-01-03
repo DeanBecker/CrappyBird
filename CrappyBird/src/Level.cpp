@@ -8,6 +8,7 @@
 
 #include "Level.hpp"
 
+#define PIPE_QTY 1
 
 void Level::update()
 {
@@ -43,6 +44,13 @@ void Level::render()
     bg->disable();
 	if (tex) tex->unbind();
     ///
+
+	/// Pipes
+	for (std::vector<Pipe*>::iterator i = pipes.begin(); i != pipes.end(); ++i)
+	{
+		(*i)->render();
+	}
+	///
 
     /// Bird
     bird->render();
@@ -95,6 +103,12 @@ Level::Level()
     background = new VertexArray(vertices, indices, tcs, Shader::BG_Shader);
 
     bird = new Bird();
+
+	for (int i = 0; i < PIPE_QTY; i++)
+	{
+		Pipe* newPipe = new Pipe();
+		pipes.push_back(newPipe);
+	}
 }
 
 Level::~Level()
@@ -102,4 +116,10 @@ Level::~Level()
 	if (tex) delete tex;
     if (background) delete background;
     if (translateMat) delete translateMat;
+
+	for (std::vector<Pipe *>::iterator i = pipes.begin(); i != pipes.end(); ++i)
+	{
+		delete *i;
+	}
+	pipes.clear();
 }

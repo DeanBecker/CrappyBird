@@ -11,16 +11,17 @@
 #include "Input.hpp"
 
 #define BIRD_SIZE 0.5
+#define FALL_ACCEL 0.005
 
 Bird::Bird()
 {
     ///Bird
     std::vector<float> vertices =
     {
-        -BIRD_SIZE, -BIRD_SIZE * 9.0f / 16.0f, 0.1f,
-        -BIRD_SIZE, BIRD_SIZE * 9.0f / 16.0f, 0.1f,
-		BIRD_SIZE, BIRD_SIZE * 9.0f / 16.0f, 0.1f,
-		BIRD_SIZE, -BIRD_SIZE * 9.0f / 16.0f, 0.1f
+        -BIRD_SIZE, -BIRD_SIZE * 9.0f / 16.0f, 0.2f,
+        -BIRD_SIZE, BIRD_SIZE * 9.0f / 16.0f, 0.2f,
+		BIRD_SIZE, BIRD_SIZE * 9.0f / 16.0f, 0.2f,
+		BIRD_SIZE, -BIRD_SIZE * 9.0f / 16.0f, 0.2f
     };
 
     std::vector<unsigned int> indices =
@@ -51,6 +52,7 @@ Bird::~Bird()
 {
     if (tex) delete tex;
     if (model) delete model;
+	if (position) delete position;
 }
 
 void Bird::update()
@@ -61,7 +63,7 @@ void Bird::update()
 		pos_delta = 0.15f;
 	}
 	else {
-		pos_delta -= 0.01f;
+		pos_delta -= FALL_ACCEL;
 	}
 }
 

@@ -17,6 +17,7 @@
 #include "Texture.hpp"
 
 #include "Bird.hpp"
+#include "Pipe.hpp"
 
 class Level
 {
@@ -36,6 +37,7 @@ private:
 
     Bird* bird;
     float xScroll = 0.0f;
+	std::vector<Pipe *> pipes;
 };
 
 #endif /* Level_hpp */
