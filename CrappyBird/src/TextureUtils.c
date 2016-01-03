@@ -54,6 +54,7 @@ TextureData getTextureData(const char * filePath, FILE_TYPE type)
 
 	if (type == BMP)
 	{
+		//TODO: Figure out how to pad data with fake alpha channel
 		glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, textureData.width, textureData.height, 0, GL_BGR, GL_UNSIGNED_BYTE, data);
 	}
 	else if (type == PNG)

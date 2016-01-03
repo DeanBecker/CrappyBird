@@ -34,6 +34,8 @@ private:
     VertexArray* model;
     Texture* tex;
     Shader* birdShader;
+	Vector3f* position;
+	float pos_delta = 0.0f;
 };
 
 #endif /* Bird_hpp */
