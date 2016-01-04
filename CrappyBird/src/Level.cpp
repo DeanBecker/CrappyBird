@@ -107,6 +107,7 @@ Level::Level()
 	for (int i = 0; i < PIPE_QTY; i++)
 	{
 		Pipe* newPipe = new Pipe();
+        if (i % 2 == 1) newPipe->inverted = true;
 		pipes.push_back(newPipe);
 	}
 }
