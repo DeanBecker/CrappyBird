@@ -21,7 +21,9 @@
 class Pipe : public IRenderable
 {
 public:
-	Pipe();
+	Pipe()
+		: Pipe(0.0f) {};
+	Pipe(float _xOffset);
 	~Pipe();
 
 	void update();
@@ -33,7 +35,11 @@ private:
 	VertexArray* model;
 	Texture* texture;
 	Shader* pipeShader;
-   	Matrix4f* translateMat = Matrix4f::identity();
+   	Matrix4f* transformMat = Matrix4f::identity();
+	Matrix4f* modelMat = Matrix4f::identity();
+
+	float xOffset = 0.0f;
+	float xScroll = 0.0f;
 };
 
 #endif /* Pipe_hpp */

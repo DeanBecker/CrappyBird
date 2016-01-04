@@ -11,8 +11,11 @@
 #define PIPE_HEIGHT 3.0f
 #define PIPE_WIDTH 0.5f
 
-Pipe::Pipe()
+Pipe::Pipe(float _xOffset)
 {
+	xOffset = _xOffset;
+	xScroll = -0.04f;
+
 	std::vector<float> vertices = 
 	{
 		-PIPE_WIDTH, -PIPE_HEIGHT * 9.0f / 16.0f, 0.1f,
@@ -27,26 +30,37 @@ Pipe::Pipe()
 	};
 	std::vector<float> texCoords = 
 	{
-		0, 1,
 		0, 0,
-		1, 0,
-		1, 1
+		0, 1,
+		1, 1,
+		1, 0
 	};
 	
 	pipeShader = Shader::Pipe_Shader;
 	model = new VertexArray(vertices, indices, texCoords, pipeShader);
 	texture = new Texture("res/tube.png", FILE_TYPE::PNG);
+
+	Vector3f* adjustVec = new Vector3f(8.0f, 4.0f, 0.0f);
+	Matrix4f* adjustMat = Matrix4f::translate(adjustVec);
+	transformMat = transformMat->multiply(adjustMat);
+
+	delete adjustMat;
+	delete adjustVec;
 }
 
 Pipe::~Pipe()
 {
-	if (model) delete model;
-	if (texture) delete texture;
-    if (translateMat) delete translateMat;
+	delete model;
+	delete texture;
+    delete transformMat;
 }
 
 void Pipe::update()
 {
+	Vector3f* scrollVec = new Vector3f(xScroll, 0.0f, 0.0f);
+	Matrix4f* translateMat = Matrix4f::translate(scrollVec);
+	modelMat = modelMat->multiply(translateMat);
+	delete translateMat;
 }
 
 void Pipe::render()
@@ -57,7 +71,8 @@ void Pipe::render()
 		texture->bind();
 	}
 
-	pipeShader->setUniformMat4f("vw_mat", translateMat);
+	pipeShader->setUniformMat4f("mo_mat", modelMat);
+	pipeShader->setUniformMat4f("vw_mat", transformMat);
     pipeShader->setUniform1i("inverted", inverted);
 	model->render();
 

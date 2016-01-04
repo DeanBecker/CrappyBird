@@ -172,6 +172,7 @@
   <ItemGroup>
     <ClCompile Include="CrappyBird\src\Bird.cpp" />
     <ClCompile Include="CrappyBird\src\Input.cpp" />
+    <ClCompile Include="CrappyBird\src\IRenderable.cpp" />
     <ClCompile Include="CrappyBird\src\Level.cpp" />
     <ClCompile Include="CrappyBird\src\main.cpp" />
     <ClCompile Include="CrappyBird\src\Matrix4f.cpp" />

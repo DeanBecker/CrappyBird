@@ -8,12 +8,17 @@
 
 #include "Level.hpp"
 
-#define PIPE_QTY 1
+#define PIPE_QTY 2
 
 void Level::update()
 {
     xScroll -= 0.03f;
     if (xScroll <= -10.0f) xScroll = 0.0f;
+
+	for (std::vector<IRenderable*>::iterator i = pipes.begin(); i != pipes.end(); ++i)
+	{
+		(*i)->update();
+	}
 
     bird->update();
 }
@@ -107,7 +112,7 @@ Level::Level()
 	for (int i = 0; i < PIPE_QTY; i++)
 	{
 		Pipe* newPipe = new Pipe();
-        if (i % 2 == 1) newPipe->inverted = true;
+        if (i % 2 == 0) newPipe->inverted = true;
 		pipes.push_back(newPipe);
 	}
 }
