@@ -14,6 +14,6 @@
 
 #include "gl_headers.h"
 
-TextureData getTextureData(const char* filePath);
+TextureData getTextureData(const char* filePath, FILE_TYPE type);
 
 #endif /* TextureUtils_h */

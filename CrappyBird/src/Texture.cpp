@@ -13,10 +13,10 @@ extern "C" {
 
 static int activeTextures = 0;
 
-Texture::Texture(std::string filePath)
+Texture::Texture(std::string filePath, FILE_TYPE type)
 {
 	/// Home grown texture loading
-	TextureData data = getTextureData(filePath.c_str());
+	TextureData data = getTextureData(filePath.c_str(), type);
 	///
 	width = data.width;
 	height = data.height;

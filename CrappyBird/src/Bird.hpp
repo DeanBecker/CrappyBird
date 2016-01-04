@@ -12,11 +12,13 @@
 #include <stdio.h>
 #include <vector>
 
+#include "IRenderable.hpp"
+
 #include "Shader.hpp"
 #include "VertexArray.hpp"
 #include "Texture.hpp"
 
-class Bird
+class Bird : public IRenderable
 {
 public:
     Bird();
@@ -34,6 +36,8 @@ private:
     VertexArray* model;
     Texture* tex;
     Shader* birdShader;
+	Vector3f* position;
+	float pos_delta = 0.0f, rotation = 0.0f;
 };
 
 #endif /* Bird_hpp */

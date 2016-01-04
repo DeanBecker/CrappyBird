@@ -17,13 +17,19 @@
 #define GLFW_INCLUDE_GLCOREARB
 #include <GLFW/glfw3.h>
 
-/// Graphics Structs
+/// Graphics Structs/Enums
 struct TextureData_def;
 typedef struct TextureData_def
 {
 	int width, height, imageSize;
 	GLuint Id;
 } TextureData;
+
+typedef enum
+{
+	BMP,
+	PNG
+} FILE_TYPE;
 ///
 
 #endif /* gl_headers_h */

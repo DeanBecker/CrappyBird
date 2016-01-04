@@ -29,6 +29,7 @@ public:
     // Static Shader Instances
     static Shader* BG_Shader;
     static Shader* Bird_Shader;
+	static Shader* Pipe_Shader;
 
     Shader(std::string vert, std::string frag);
 
@@ -51,7 +52,7 @@ public:
 private:
     std::unordered_map<std::string, GLuint> attribCache;
     std::unordered_map<std::string, GLint> uniformCache;
-    bool enabled;
+    bool enabled = false;
 };
 
 #endif /* Shader_hpp */

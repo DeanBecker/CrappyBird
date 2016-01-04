@@ -14,6 +14,7 @@ extern "C" {
 
 Shader* Shader::BG_Shader;
 Shader* Shader::Bird_Shader;
+Shader* Shader::Pipe_Shader;
 
 Shader::Shader(std::string vert, std::string frag)
 {
@@ -24,6 +25,7 @@ void Shader::LoadAll()
 {
     BG_Shader = new Shader("shaders/bg.vert", "shaders/bg.frag");
     Bird_Shader = new Shader("shaders/bird.vert", "shaders/bird.frag");
+	Pipe_Shader = new Shader("shaders/pipe.vert", "shaders/pipe.frag");
 }
 
 int Shader::getAttrib(std::string name)

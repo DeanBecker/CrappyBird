@@ -16,7 +16,9 @@
 class Texture 
 {
 public:
-	Texture(std::string filePath);
+	Texture(std::string filePath)
+		: Texture(filePath, FILE_TYPE::BMP) {};
+	Texture(std::string filePath, FILE_TYPE type);
 	~Texture();
 
 	int width, height;
