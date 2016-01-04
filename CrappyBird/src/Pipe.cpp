@@ -3,7 +3,7 @@
 //  CrappyBird
 //
 //  Created by Dean Becker on 03/01/2016.
-//  Copyright © 2016 Dean Becker. All rights reserved.
+//  Copyright ï¿½ 2016 Dean Becker. All rights reserved.
 //
 
 #include "Pipe.hpp"
@@ -15,10 +15,10 @@ Pipe::Pipe()
 {
 	std::vector<float> vertices = 
 	{
-		-PIPE_HEIGHT, -PIPE_HEIGHT * 9.0f / 16.0f, 0.1f,
-		-PIPE_HEIGHT, PIPE_HEIGHT * 9.0f / 16.0f, 0.1f,
-		PIPE_HEIGHT, PIPE_HEIGHT * 9.0f / 16.0f, 0.1f,
-		PIPE_HEIGHT, -PIPE_HEIGHT * 9.0f / 16.0f, 0.1f
+		-PIPE_WIDTH, -PIPE_HEIGHT * 9.0f / 16.0f, 0.1f,
+		-PIPE_WIDTH, PIPE_HEIGHT * 9.0f / 16.0f, 0.1f,
+		PIPE_WIDTH, PIPE_HEIGHT * 9.0f / 16.0f, 0.1f,
+		PIPE_WIDTH, -PIPE_HEIGHT * 9.0f / 16.0f, 0.1f
 	};
 	std::vector<unsigned int> indices = 
 	{
@@ -42,6 +42,7 @@ Pipe::~Pipe()
 {
 	if (model) delete model;
 	if (texture) delete texture;
+    if (translateMat) delete translateMat;
 }
 
 void Pipe::update()
@@ -56,10 +57,9 @@ void Pipe::render()
 		texture->bind();
 	}
 
-	Matrix4f* translateMat = Matrix4f::identity();
 	pipeShader->setUniformMat4f("vw_mat", translateMat);
+    pipeShader->setUniform1i("inverted", inverted);
 	model->render();
-	if (translateMat) delete translateMat;
 
 	model->unbind();
 	if (texture)

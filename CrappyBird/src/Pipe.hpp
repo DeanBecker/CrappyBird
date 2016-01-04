@@ -3,7 +3,7 @@
 //  CrappyBird
 //
 //  Created by Dean Becker on 03/01/2016.
-//  Copyright © 2016 Dean Becker. All rights reserved.
+//  Copyright ï¿½ 2016 Dean Becker. All rights reserved.
 //
 
 #ifndef Pipe_hpp
@@ -27,11 +27,13 @@ public:
 	void update();
 	void render();
 
+    bool inverted = false;
+    
 private:
-	bool inverted;
 	VertexArray* model;
 	Texture* texture;
 	Shader* pipeShader;
+   	Matrix4f* translateMat = Matrix4f::identity();
 };
 
 #endif /* Pipe_hpp */

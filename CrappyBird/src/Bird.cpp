@@ -80,6 +80,7 @@ void Bird::render()
 	Matrix4f* translateMat = Matrix4f::identity()->translate(position)->multiply(Matrix4f::rotate(rotation));
     birdShader->setUniformMat4f("vw_mat", translateMat);
     model->render();
+    if (translateMat) delete translateMat;
 
     birdShader->disable();
     if (tex) tex->unbind();
