@@ -119,9 +119,9 @@ Level::Level()
 
 Level::~Level()
 {
-	if (tex) delete tex;
-    if (background) delete background;
-    if (translateMat) delete translateMat;
+	delete tex;
+    delete background;
+    delete translateMat;
 
 	for (std::vector<IRenderable *>::iterator i = pipes.begin(); i != pipes.end(); ++i)
 	{

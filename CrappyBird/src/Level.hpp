@@ -39,6 +39,7 @@ private:
     IRenderable* bird;
     float xScroll = 0.0f;
 	std::vector<IRenderable *> pipes;
+	int index = 0;
 };
 
 #endif /* Level_hpp */

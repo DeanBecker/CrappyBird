@@ -26,17 +26,20 @@ public:
 	Pipe(float _xOffset);
 	~Pipe();
 
+	void init();
 	void update();
 	void render();
 
     bool inverted = false;
     
+protected:
+	static VertexArray* model;
+	static Texture* texture;
+	static Shader* pipeShader;
+
 private:
-	VertexArray* model;
-	Texture* texture;
-	Shader* pipeShader;
    	Matrix4f* transformMat = Matrix4f::identity();
-	Matrix4f* modelMat = Matrix4f::identity();
+	Matrix4f* mlMatrix = Matrix4f::identity();
 
 	float xOffset = 0.0f;
 	float xScroll = 0.0f;

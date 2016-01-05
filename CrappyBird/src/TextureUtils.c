@@ -36,7 +36,6 @@ TextureData getTextureData(const char * filePath, FILE_TYPE type)
 	{
 		// use stb_image to load PNG
 		int comp;
-		//stbi_set_flip_vertically_on_load(1); // Unncessessary if you pass in the 'correct' tex coords
 		data = stbi_load(filePath, &textureData.width, &textureData.height, &comp, STBI_rgb_alpha);
 		if (!data)
 		{
