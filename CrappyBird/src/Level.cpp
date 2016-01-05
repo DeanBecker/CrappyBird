@@ -8,7 +8,7 @@
 
 #include "Level.hpp"
 
-#define PIPE_QTY 2
+#define PIPE_QTY 10
 
 void Level::update()
 {
@@ -111,7 +111,7 @@ Level::Level()
 
 	for (int i = 0; i < PIPE_QTY; i++)
 	{
-		Pipe* newPipe = new Pipe();
+		Pipe* newPipe = new Pipe(floorf(i / 2.0f));
         if (i % 2 == 0) newPipe->inverted = true;
 		pipes.push_back(newPipe);
 	}

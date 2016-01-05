@@ -60,7 +60,7 @@ void Bird::update()
 	position->y -= pos_delta;
 	if (isKeyDown(GLFW_KEY_SPACE) == true)
 	{
-		pos_delta = 0.15f;
+		pos_delta = 0.1f;
 	}
 	else {
 		pos_delta -= FALL_ACCEL;

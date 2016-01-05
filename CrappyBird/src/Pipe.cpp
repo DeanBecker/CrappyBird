@@ -8,8 +8,9 @@
 
 #include "Pipe.hpp"
 
-#define PIPE_HEIGHT 3.0f
+#define PIPE_HEIGHT 4.0f
 #define PIPE_WIDTH 0.5f
+#define PIPE_SPACING 6.0f
 
 Pipe::Pipe(float _xOffset)
 {
@@ -40,7 +41,7 @@ Pipe::Pipe(float _xOffset)
 	model = new VertexArray(vertices, indices, texCoords, pipeShader);
 	texture = new Texture("res/tube.png", FILE_TYPE::PNG);
 
-	Vector3f* adjustVec = new Vector3f(8.0f, 4.0f, 0.0f);
+	Vector3f* adjustVec = new Vector3f(8.0f + xOffset * PIPE_SPACING, 4.0f, 0.0f);
 	Matrix4f* adjustMat = Matrix4f::translate(adjustVec);
 	transformMat = transformMat->multiply(adjustMat);
 

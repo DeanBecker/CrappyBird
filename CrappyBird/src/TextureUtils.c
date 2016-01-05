@@ -49,9 +49,6 @@ TextureData getTextureData(const char * filePath, FILE_TYPE type)
 	glGenTextures(1, &textureData.Id);
 	glBindTexture(GL_TEXTURE_2D, textureData.Id);
 
-	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
-	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
-
 	if (type == BMP)
 	{
 		//TODO: Figure out how to pad data with fake alpha channel
@@ -61,6 +58,9 @@ TextureData getTextureData(const char * filePath, FILE_TYPE type)
 	{
 		glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, textureData.width, textureData.height, 0, GL_RGBA, GL_UNSIGNED_BYTE, data);
 	}
+
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
 
 	glBindTexture(GL_TEXTURE_2D, 0);
 	if (data) free(data);
